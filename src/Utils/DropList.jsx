@@ -11,10 +11,11 @@ import logout from "../assets/images and icons/drop/logout.svg"
 import fav from "../assets/images and icons/drop/Shapes.svg"
 import bag from "../assets/images and icons/drop/bag.svg"
 import star from "../assets/images and icons/drop/Arrow.svg"
+import { useTranslation } from 'react-i18next';
 
 
 export default function DropList({ anchorEl, open, handleClose }) {
-
+  const {t,i18n} = useTranslation("drop")
   return (                            
     <Box>
       <Menu
@@ -32,38 +33,38 @@ export default function DropList({ anchorEl, open, handleClose }) {
         <MenuItem onClick={handleClose}  >
           <Stack direction={"row"} alignItems={"center"} gap={"8px"}>
             <Box component={"img"} src={user} sx={{width:"8px",height:"8px"}} />
-            <Typography>عرض/تعديل الملف الشخصي</Typography> 
+            <Typography>{t("profile")}</Typography> 
           </Stack>
         </MenuItem>
         <Box sx={{height:"2px",width:"100%"}}  className="grad-line"/>
         <MenuItem onClick={handleClose}  >
           <Stack direction={"row"} alignItems={"center"} gap={"8px"}>
             <Box component={"img"} src={order} sx={{width:"8px",height:"8px"}} />
-            <Typography>طلباتي</Typography> 
+            <Typography>{t("order")}</Typography> 
           </Stack>
         </MenuItem>
         <MenuItem onClick={handleClose}  >
           <Stack direction={"row"} alignItems={"center"} gap={"8px"}>
             <Box component={"img"} src={sub} sx={{width:"8px",height:"8px"}} />
-            <Typography>اشتراكاتي</Typography> 
+            <Typography>{t("subs")}</Typography> 
           </Stack>
         </MenuItem>
         <MenuItem onClick={handleClose}  >
           <Stack direction={"row"} alignItems={"center"} gap={"8px"}>
             <Box component={"img"} src={location} sx={{width:"8px",height:"8px"}} />
-            <Typography>عناويني</Typography> 
+            <Typography>{t("addr")}</Typography> 
           </Stack>
         </MenuItem>
         <MenuItem onClick={handleClose}  >
           <Stack direction={"row"} alignItems={"center"} gap={"8px"}>
             <Box component={"img"} src={mnas} sx={{width:"8px",height:"8px"}} />
-            <Typography>مناسباتي</Typography> 
+            <Typography>{t("occ")}</Typography> 
           </Stack>
         </MenuItem>
         <MenuItem onClick={handleClose}  >
           <Stack direction={"row"} alignItems={"center"} gap={"8px"}>
             <Box component={"img"} src={fav} sx={{width:"8px",height:"8px"}} />
-            <Typography>المفضلة</Typography> 
+            <Typography>{t("favorite")}</Typography> 
           </Stack>
         </MenuItem>
         
@@ -71,13 +72,13 @@ export default function DropList({ anchorEl, open, handleClose }) {
         <MenuItem onClick={handleClose}  >
           <Stack direction={"row"} alignItems={"center"} gap={"8px"}>
             <Box component={"img"} src={star} sx={{width:"8px",height:"8px"}} />
-            <Typography>اللحم الذهبي vip</Typography> 
+            <Typography>{t("vip")}</Typography> 
           </Stack>
         </MenuItem>
         <MenuItem onClick={handleClose}  >
           <Stack direction={"row"} alignItems={"center"} gap={"8px"}>
             <Box component={"img"} src={bag} sx={{width:"8px",height:"8px"}} />
-            <Typography>محفظة اللحم الذهبي</Typography> 
+            <Typography>{t("bag")}</Typography> 
           </Stack>
         </MenuItem>
         <Box sx={{height:"2px",width:"100%"}}  className="grad-line"/>
@@ -85,7 +86,7 @@ export default function DropList({ anchorEl, open, handleClose }) {
         <MenuItem onClick={handleClose}  >
           <Stack direction={"row"} alignItems={"center"} gap={"8px"}>
             <Box component={"img"} src={logout} sx={{width:"8px",height:"8px"}} />
-            <Typography> تسجيل الخروج</Typography> 
+            <Typography>{t("out")}</Typography> 
           </Stack>
         </MenuItem>
       </Stack>

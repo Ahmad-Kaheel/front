@@ -14,7 +14,9 @@ import slide2 from "../assets/images and icons/hero/slide2.jpg";
 import slide3 from "../assets/images and icons/hero/slide3.jpg";
 import left from "../assets/images and icons/hero/left.svg";
 import right from "../assets/images and icons/hero/right.svg";
+import { useTranslation } from 'react-i18next';
 export default function DiscoverDrawer({ openDrawer, setOpenDrawer }) {
+    const {t,i18n} = useTranslation("discoverDrawer")
     const swiperRef = useRef(null); // مرجع للسلايدر
 
     const slides = [
@@ -46,7 +48,7 @@ export default function DiscoverDrawer({ openDrawer, setOpenDrawer }) {
             {/* محتويات السلة */}
             <Stack className='gradient-border' flexDirection={"row"} justifyContent={"space-between"} sx={{ paddingY:"32px" }}>
               <Stack flexDirection={"row"} gap={"15px"}>
-                <Typography fontWeight={600} fontSize={"16px"} color='colors.black0'>اكتشف</Typography>
+                <Typography fontWeight={600} fontSize={"16px"} color='colors.black0'>{t("discover")}</Typography>
               </Stack>
               <Box 
                 component="img" 

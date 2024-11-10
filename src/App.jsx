@@ -8,6 +8,10 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Footer from './Dividing/Footer';
 import Products from './pages/Products';
+import Product from './pages/Product';
+import Login from './Auth/Login';
+import RegisterC from './Auth/RegisterC';
+import RegisterB from './Auth/RegisterB';
 function App() {
   const { t, i18n } = useTranslation();
 
@@ -23,6 +27,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/product" element={<Product />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/register-customer' element={< RegisterC/>} />
+          <Route path='/register-vendor' element={< RegisterB/>} />
+
         </Routes>
         <Footer />
       </ThemeProvider>

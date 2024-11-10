@@ -6,9 +6,10 @@ import close from "../assets/images and icons/basket/close.svg";
 import car from "../assets/images and icons/basket/Transport.svg";
 import delet from "../assets/images and icons/basket/delete.svg";
 import productImg from "../assets/images and icons/hero/slide1.jpg";
+import { useTranslation } from 'react-i18next';
 
 export default function Basket({ openDrawer, handleDrawerClose }) {
-  
+    const {t,i18t} = useTranslation('basket')
     return (
         <Drawer 
         open={openDrawer} 
@@ -19,7 +20,7 @@ export default function Basket({ openDrawer, handleDrawerClose }) {
             <Stack flexDirection={"row"} justifyContent={"space-between"} sx={{ paddingY:"32px" }}  className='gradient-border'>
               <Stack flexDirection={"row"} gap={"15px"}>
                 <Box component="img" src={basket} />
-                <Typography fontWeight={600} fontSize={"16px"} color='colors.black0'>السلة</Typography>
+                <Typography fontWeight={600} fontSize={"16px"} color='colors.black0'>{t("basket")}</Typography>
               </Stack>
               <Box 
                 component="img" 
@@ -30,15 +31,15 @@ export default function Basket({ openDrawer, handleDrawerClose }) {
             </Stack>
             <Stack gap="16px"> 
                 <Typography  fontWeight={600} fontSize={"16px"} color='colors.black0'>
-                    خيار مثالي
+                   {t("label1")}
                 </Typography>
                 <Typography  fontWeight={400} fontSize={"16px"} color='colors.black0'>
-                تم تصميم جميع تنسيقاتنا باهتمام لتساعدكم بتوصيل مشاعركم لأحبابكم
+               {t("label2")}
                 </Typography>
             </Stack>
             <Stack flexDirection={"row"} justifyContent={"space-between"} sx={{paddingY:"16px",borderBottom:1,borderWidth:"2px",borderColor:"#36E236"}}>
                 <Box component={"img"} src={car} />
-                <Typography  fontWeight={400} fontSize={"14px"} color='colors.black0'>طلبك مؤهل للتوصيل المجاني!</Typography>
+                <Typography  fontWeight={400} fontSize={"14px"} color='colors.black0'>{t("delever")}</Typography>
                 <Typography  fontWeight={400} fontSize={"14px"} color='colors.black0'>2500 ر.س</Typography>
             </Stack>
             <Stack flexDirection={"row"} justifyContent={"space-between"} sx={{border:1,padding:"32px",borderRadius:"32px",borderWidth:"2px"}}>
@@ -64,24 +65,24 @@ export default function Basket({ openDrawer, handleDrawerClose }) {
                 </Stack>
             </Stack>
             <Stack gap={"32px"} sx={{padding:"32px",borderRadius:"32px",border:1,borderWidth:"2px"}}>
-                <Typography fontWeight={600} fontSize={"16px"} color='colors.black0'>ملخص الطلب</Typography>
+                <Typography fontWeight={600} fontSize={"16px"} color='colors.black0'>{t("summary")}</Typography>
                 <Stack direction={"row"} justifyContent={"space-between"}>
-                    <Typography fontWeight={400} fontSize={"14px"} color='colors.black0'>المجموع</Typography>
+                    <Typography fontWeight={400} fontSize={"14px"} color='colors.black0'>{t("total")}</Typography>
                     <Typography fontWeight={400} fontSize={"14px"} color='colors.black0'>555رس</Typography>
                 </Stack>
                 <Stack direction={"row"} justifyContent={"space-between"}>
-                    <Typography fontWeight={400} fontSize={"14px"} color='colors.black0'>رسوم التوصيل</Typography>
+                    <Typography fontWeight={400} fontSize={"14px"} color='colors.black0'>{t("feez")}</Typography>
                     <Typography fontWeight={400} fontSize={"14px"} color='colors.black0'>مجانا</Typography>
                 </Stack>
-                <Typography fontWeight={400} fontSize={"14px"} color='colors.black0'>يرجى ملاحظة أن بعض المناطق وخدمة التوصيل السريع قد تتضمن رسوم توصيل إضافية</Typography>
+                <Typography fontWeight={400} fontSize={"14px"} color='colors.black0'>{t("note")}</Typography>
                 <Stack direction={"row"} justifyContent={"space-between"}>
-                    <Typography fontWeight={400} fontSize={"14px"} color='colors.black0'> الاجمالي</Typography>
+                    <Typography fontWeight={400} fontSize={"14px"} color='colors.black0'>{t("total2")}</Typography>
                     <Typography fontWeight={400} fontSize={"14px"} color='colors.black0'>555رس</Typography>
                 </Stack>
             </Stack>
             <Stack gap={"16px"}>
-                <Button variant="contained" sx={{bgcolor:"colors.red0",fontWeight:500,fontSize:"16px"}}>تأكيد الطلب</Button>
-                <Button variant="outlined" sx={{borderColor:"colors.red0",color:"colors.red0",fontWeight:500,fontSize:"16px"}}>مواصلة التصفح</Button>
+                <Button variant="contained" sx={{bgcolor:"colors.red0",fontWeight:500,fontSize:"16px"}}>{t("confirm")}</Button>
+                <Button variant="outlined" sx={{borderColor:"colors.red0",color:"colors.red0",fontWeight:500,fontSize:"16px"}}>{t("continue")}</Button>
             </Stack>
         </Stack>
       </Drawer>

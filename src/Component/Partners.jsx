@@ -17,7 +17,7 @@ import ReviewCard from '../Utils/ReviewCard';
 
 const Partners = () => {
     const swiperRef = useRef(null);
-    const { t, i18n } = useTranslation('choices');
+    const { t, i18n } = useTranslation('partners');
     const theme = useTheme();
     const isXs = useMediaQuery(theme.breakpoints.down('sm'));
     const isSm = useMediaQuery(theme.breakpoints.between('sm', 'md'));

@@ -29,6 +29,23 @@ import arChoice from './locales/ar/home/cheifChoices.json'
 import enChoice from './locales/en/home/cheifChoices.json'
 import arFooter from "./locales/ar/footer.json"
 import enFooter from "./locales/en/footer.json"
+import arReview from "./locales/ar/home/review.json"
+import enReview from "./locales/en/home/review.json"
+import arPartners from "./locales/ar/home/partners.json" 
+import enPartners from "./locales/en/home/partners.json" 
+import arBasket from "./locales/ar/basket.json"
+import enBasket from "./locales/en/basket.json"
+import arDiscoverDrawer from "./locales/ar/Discover.json"
+import enDiscoverDrawer from "./locales/en/Discover.json"
+import arDrop from "./locales/ar/drop.json"
+import enDrop from "./locales/en/drop.json"
+import arLogin from "./locales/ar/auth/login.json"
+import enLogin from "./locales/en/auth/login.json"
+import arRegisterC from "./locales/ar/auth/registerC.json"
+import enRegisterC from "./locales/en/auth/registerC.json"
+import arRegisterB from "./locales/ar/auth/registerB.json"
+import enRegisterB from "./locales/en/auth/registerB.json"
+
 
 import store from './state/Store';
 import { Provider } from 'react-redux';
@@ -49,7 +66,16 @@ i18n
       person:arPerson,
       group:arGroup,
       choices:arChoice,
-      footer:arFooter
+      footer:arFooter,
+      review:arReview,
+      partners:arPartners,
+      basket:arBasket,
+      discoverDrawer:arDiscoverDrawer,
+      drop:arDrop,
+      login:arLogin,
+      registerC:arRegisterC,
+      registerB:arRegisterB
+
      },
      en:{
       nav1:enNav1Translation,
@@ -63,8 +89,16 @@ i18n
       person:enPerson,
       group:enGroup,
       choices:enChoice,
-      footer:enFooter
-      
+      footer:enFooter,
+      review:enReview,
+      partners:enPartners,
+      basket:enBasket,
+      discoverDrawer:enDiscoverDrawer,
+      drop:enDrop,
+      login:enLogin,
+      registerC:enRegisterC,
+      registerB:enRegisterB
+
      }
     },
     fallbackLng: 'ar', // اللغة الافتراضية

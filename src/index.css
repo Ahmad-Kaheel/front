@@ -20,3 +20,11 @@ border-image-source: linear-gradient(90deg, rgba(38, 38, 38, 0) -0.5%, #262626 5
     
     
 }
+.custom-label-rtl {
+    left: inherit !important;
+    right: 2rem !important;
+    transform-origin: right !important;
+  }
+  .custom-label-rtl + .MuiOutlinedInput-root fieldset {
+    text-align: right;
+  }

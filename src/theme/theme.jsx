@@ -5,6 +5,7 @@ const theme = createTheme({
     fontFamily: "'Cairo', sans-serif",
   },
   palette: {
+    
     colors: {
       red0: "#E23636",
       black0: "#262626",

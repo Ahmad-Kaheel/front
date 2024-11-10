@@ -16,7 +16,7 @@ import user from "../assets/images and icons/customer/user.png"
 
 const CustomerReview = () => {
     const swiperRef = useRef(null);
-    const { t, i18n } = useTranslation('choices');
+    const { t, i18n } = useTranslation('review');
     const theme = useTheme();
     const isXs = useMediaQuery(theme.breakpoints.down('sm'));
     const isSm = useMediaQuery(theme.breakpoints.between('sm', 'md'));
