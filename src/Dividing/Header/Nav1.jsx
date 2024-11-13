@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next';
 const Nav1 = () => {
     const { t, i18n } = useTranslation('nav1');
     const [locat, setLocat] = useState('Ryadh');
-    const language = i18n.language
+    const language = i18n.language;
 
     const handleChange = (event) => {
         setLocat(event.target.value);
@@ -25,31 +25,31 @@ const Nav1 = () => {
             justifyContent={"space-between"} 
             className='gradient-border'
             sx={{
-                paddingX: { xs: "28px", sm: "32px", md: "70px" }, // استجابة لحجم الشاشة
+                paddingX: { xs: "28px", sm: "32px", md: "70px" },
                 paddingY: "16px",
-                height: { xs: "auto", md: "65px" }, // اجعل الارتفاع متجاوبًا
+                height: { xs: "auto", md: "65px" },
                 borderBottomWidth: "4px",
                 borderBottomStyle: "solid",
                 borderImage: "gradient.red_line",
             }}
+            role="navigation" // إضافة تحسين SEO للتوضيح
+            aria-label={t('main_navigation')}
         >
             <Stack direction={"row"} gap={{ xs: "8px", md: "16px" }} flexWrap="wrap">
                 <Stack direction={"row"} alignItems={"center"} gap="7px">
-                    <Box component={"img"} src={car} alt='car' sx={{ width: {xs:"12px",md:"24px"}, height:{xs:"12px",md:"24px"}}} />
+                    <Box component={"img"} src={car} alt={t('alt_car_image')} sx={{ width: {xs:"12px",md:"24px"}, height:{xs:"12px",md:"24px"}}} />
                     <Typography color="text.paraghraph" sx={{fontSize:{xs:"9px",md:"14px",lg:"15px"}}}>
                         {t('delivery')}
                     </Typography>
                 </Stack>
                 <Stack direction={"row"} alignItems={"center"}  gap="7px">
-                 <Box component={"img"} src={location} alt='location' sx={{ width: {xs:"12px",md:"24px"}, height:{xs:"12px",md:"24px"}}} />
-
+                    <Box component={"img"} src={location} alt={t('alt_location_image')} sx={{ width: {xs:"12px",md:"24px"}, height:{xs:"12px",md:"24px"}}} />
                     <Typography color="text.paraghraph" sx={{fontSize:{xs:"9px",md:"14px",lg:"15px"}}}>
                         {t('location')}
                     </Typography>
                 </Stack>
                 <Stack direction={"row"} alignItems={"center"}  gap="7px">
-                <Box component={"img"} src={product} alt='product' sx={{ width: {xs:"12px",md:"24px"}, height:{xs:"12px",md:"24px"}}} />
-
+                    <Box component={"img"} src={product} alt={t('alt_product_image')} sx={{ width: {xs:"12px",md:"24px"}, height:{xs:"12px",md:"24px"}}} />
                     <Typography color="text.paraghraph" sx={{fontSize:{xs:"9px",md:"14px",lg:"15px"}}}>
                         {t('product')}
                     </Typography>
@@ -72,10 +72,11 @@ const Nav1 = () => {
                                 border: "none",
                             },
                             "& .MuiSelect-icon": {
-                                right: i18n.language === 'en' ? '10px' : 'unset', 
-                                left: i18n.language === 'ar' ? '10px' : 'unset', 
+                                right: i18n.language === 'en' ? '10px' : 'unset',
+                                left: i18n.language === 'ar' ? '10px' : 'unset',
                             },
                         }}
+                        aria-label={t('select_location')}
                     >
                         <MenuItem value={"Ryadh"}>{t('select1')}</MenuItem>
                         <MenuItem value={"jaddah"}>{t('select2')}</MenuItem>
@@ -98,8 +99,9 @@ const Nav1 = () => {
                         borderStyle: "solid", 
                         borderRadius: "8px" 
                     }}
+                    aria-label={language === 'ar' ? 'تغيير اللغة إلى الإنجليزية' : 'Switch language to Arabic'}
                 >
-                    {i18n.language === 'ar' ? 'English' : 'العربية'}
+                    {language === 'ar' ? 'English' : 'العربية'}
                 </Box>
             </Stack>
         </Stack>

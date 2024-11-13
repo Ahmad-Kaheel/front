@@ -12,6 +12,15 @@ import Product from './pages/Product';
 import Login from './Auth/Login';
 import RegisterC from './Auth/RegisterC';
 import RegisterB from './Auth/RegisterB';
+import Profile from './Auth/Profile';
+import Payment from './pages/payment';
+import FinishCheckout from './Component/FinishCheckout';
+import { HelmetProvider } from 'react-helmet-async';
+import ProfileData from './Auth/ProfileData';
+import ProfileAdress from './Auth/ProfileAdress';
+import ProfileOrder from './Auth/ProfileOrder';
+import { Favorite } from '@mui/icons-material';
+import { Typography } from '@mui/material';
 function App() {
   const { t, i18n } = useTranslation();
 
@@ -20,22 +29,34 @@ function App() {
   }, [i18n.language]);
 
   return (
-   <BrowserRouter>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/product" element={<Product />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/register-customer' element={< RegisterC/>} />
-          <Route path='/register-vendor' element={< RegisterB/>} />
+   <HelmetProvider>
+      <BrowserRouter>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/product" element={<Product />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/register-customer' element={< RegisterC/>} />
+            <Route path='/register-vendor' element={< RegisterB/>} />
+            <Route path="/profile" element={<Profile />}>
+              <Route path="data" element={<ProfileData />} />
+              <Route path="address" element={<ProfileAdress />} />
+              <Route path="order" element={<ProfileOrder />} />
+              <Route path="favorite" element={<Favorite />} />
+            </Route>
+            <Route path='/payment' element={< Payment/>} />
+            <Route path='/checkout' element={< FinishCheckout/>} />
 
-        </Routes>
-        <Footer />
-      </ThemeProvider>
-   </BrowserRouter>
+
+
+          </Routes>
+          <Footer />
+        </ThemeProvider>
+      </BrowserRouter>
+   </HelmetProvider>
   );
 }
 
