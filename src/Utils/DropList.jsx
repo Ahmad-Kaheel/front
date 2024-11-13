@@ -24,7 +24,7 @@ export default function DropList({ anchorEl, open, handleClose, setOpen }) {
   };
 
   const menuItems = [
-    { icon: user, label: t("profile"), onClick: () => handleClick("/profile/data") },
+    { icon: user, label: t("profile"), onClick: () => handleClick("/profile") },
     { icon: bag, label: t("product"), onClick: () => handleClick("/products") },
 
     { icon: order, label: t("order"), onClick: () => handleClick("/profile/order") },

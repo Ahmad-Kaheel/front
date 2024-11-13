@@ -25,7 +25,7 @@ const Nav1 = () => {
             justifyContent={"space-between"} 
             className='gradient-border'
             sx={{
-                paddingX: { xs: "28px", sm: "32px", md: "70px" },
+                paddingX: { xs: "28px", sm: "32px", md: "128px" },
                 paddingY: "16px",
                 height: { xs: "auto", md: "65px" },
                 borderBottomWidth: "4px",

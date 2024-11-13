@@ -32,7 +32,7 @@ const products = [
 
 const Products = () => {
   return (
-    <Stack gap={{ xs: "32px", md: "64px" }} sx={{ width: "90%", marginX: "auto", paddingY: "128px" }}>
+    <Stack gap={{ xs: "32px", md: "64px" }} sx={{  paddingX: { xs: "28px", sm: "32px", md: "128px" } , paddingY: "128px" }}>
       <Breadcrumbs aria-label="breadcrumb">
         <Link underline="hover" color="inherit" href="/">لحوم</Link>
         <Link underline="hover" color="inherit" href="/m">لحوم جمل</Link>

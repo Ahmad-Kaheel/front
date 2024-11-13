@@ -37,7 +37,7 @@ const DiscountedProducts = () => {
     };
 
     return (
-        <Stack gap={{ xs: "32px", sm: "48px", md: "65px" }}  sx={{ paddingY: { xs: "32px", sm: "48px", md: "64px" }, paddingX: { xs: "28px", sm: "32px", md: "70px" } }}>
+        <Stack gap={{ xs: "32px", sm: "48px", md: "65px" }}  sx={{ paddingY: { xs: "32px", sm: "48px", md: "64px" }, paddingX: { xs: "28px", sm: "32px", md: "128px" } }}>
             <Stack flexDirection={"row"} justifyContent={"space-between"} alignItems={"center"}>
                 <Typography fontWeight={700} sx={{ fontSize: { xs: "20px", sm: "30px", md: "36px" } }} color={"colors.black0"}>
                     {t('name')}

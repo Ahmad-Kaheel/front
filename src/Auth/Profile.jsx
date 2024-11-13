@@ -8,18 +8,25 @@ import Favorite from './Favorite';
 
 const Profile = () => {
     const [view, setView] = useState('data');
+  
+
+
     const isMobile = useMediaQuery((theme) => theme.breakpoints.down('md'));
     const navigate = useNavigate();
 
     const handleChange = (event, nextView) => {
         setView(nextView);
-        navigate(`/profile/${nextView}`);
+        // الانتقال إلى "/profile" فقط عند الضغط على "بياناتي"
+        if (nextView === "data") {
+            navigate("/profile");
+        } else {
+            navigate(`/profile/${nextView}`);
+        }
     };
-
     return (
-        <Stack sx={{ padding:{xs:"20px",sm:"32px",md:"64px",lg:"128px"}, width: "fit-content", gap: "32px" }}>
+        <Stack sx={{ padding:{xs:"20px",sm:"32px",md:"64px",lg:"128px",width:{xs:"100%",md:"400px"}},  gap: "32px" }}>
             <Typography>حسابي</Typography>
-            <Stack direction={{ xs: "column", md: "row" }} gap={"32px"}>
+            <Stack direction={{ xs: "column", md: "row" }} gap={"32px"} >
                 <ToggleButtonGroup
                     orientation={isMobile ? "horizontal" : "vertical"}
                     value={view}
@@ -41,8 +48,9 @@ const Profile = () => {
                         <Typography>المفضلة</Typography>
                     </ToggleButton>
                 </ToggleButtonGroup>
+              
                 <Routes>
-                    <Route path="data" element={<ProfileData />} />
+                    <Route path="" element={<ProfileData />} />
                     <Route path="address" element={<ProfileAdress />} />
                     <Route path="order" element={<ProfileOrder />} />
                     <Route path="favorite" element={<Favorite />} />

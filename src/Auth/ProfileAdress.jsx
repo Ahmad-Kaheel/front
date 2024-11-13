@@ -4,7 +4,7 @@ import React from 'react'
 
 const ProfileAdress = () => {
   return (
-    <Stack gap={"32px"} sx={{padding:{xs:"16px",sm:"32px" , md:"64px"}}}>
+    <Stack gap={"32px"} width={"100%"}>
       <Stack direction={"row"} sx={{border:1,padding:"16px"}} gap={{xs:"16px",sm:"32px",md:"64px"}} >
         <Stack gap={"32px"}>
             <Stack direction={"row"}>

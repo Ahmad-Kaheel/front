@@ -24,7 +24,7 @@ const DiscoverNow = () => {
     const { t, i18n } = useTranslation("discover")
 
     return (
-        <Stack gap={{ xs: "32px", sm: "48px", md: "64px" }} sx={{ paddingY: { xs: "32px", sm: "48px", md: "64px" }, paddingX: { xs: "28px", sm: "32px", md: "70px" } }}>
+        <Stack gap={{ xs: "32px", sm: "48px", md: "64px" }} sx={{ paddingY: { xs: "32px", sm: "48px", md: "64px" }, paddingX: { xs: "28px", sm: "32px", md: "128px" } }}>
             <Typography fontWeight={700} fontSize={{ xs: "24px", sm: "30px", md: "36px" }}>{t("discover")}</Typography>
             <Stack 
                 direction={{ xs: "column", md: "row" }} 

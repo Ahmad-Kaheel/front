@@ -42,6 +42,7 @@ function App() {
             <Route path='/register-customer' element={< RegisterC/>} />
             <Route path='/register-vendor' element={< RegisterB/>} />
             <Route path="/profile" element={<Profile />}>
+              <Route index element={<ProfileData />} /> {/* هذا يعرض ProfileData عندما يكون الرابط /profile فقط */}
               <Route path="data" element={<ProfileData />} />
               <Route path="address" element={<ProfileAdress />} />
               <Route path="order" element={<ProfileOrder />} />

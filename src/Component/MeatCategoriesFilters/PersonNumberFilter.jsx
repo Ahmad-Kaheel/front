@@ -33,7 +33,7 @@ const PersonNumberFilter = () => {
     },
 ]
   return (
-    <Stack gap={"30px"}   sx={{ paddingY: { xs: "32px", sm: "48px", md: "64px" }, paddingX: { xs: "28px", sm: "32px", md: "70px" } }} >
+    <Stack gap={"30px"}   sx={{ paddingY: { xs: "32px", sm: "48px", md: "64px" }, paddingX: { xs: "28px", sm: "32px", md: "128px" } }} >
         <HeadSection name={t("name")} more={t('more')} />
         <Stack flexDirection={"row"} sx={{gap:{xs:"10px",md:"64px",lg:"128px"}}} justifyContent={"center"} >
             {
