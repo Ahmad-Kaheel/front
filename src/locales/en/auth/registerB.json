@@ -1,0 +1,20 @@
+{
+    "title":"Create a vendor account",
+    "company":"company name",
+    "type":"company type",
+    "record":"Commercial registration number",
+    "tax":"Tax number",
+    "email":"email",
+    "password":"password",
+    "address":"company address",
+    "admin":"Administrator's name",
+    "call":"Zip code",
+    "phone":"Phone number",
+    "website":"Website",
+    "Activity":"Activity",
+    "button":"Create",
+    "account":"Do you have an account?",
+    "in":"login",
+    "customer":"are you customer?",
+    "cusAcc":"Create customer account"
+}

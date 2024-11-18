@@ -1,0 +1,12 @@
+{
+    "title":"Login",
+    "label1":"Complete with one click",
+    "label2":"Or use your account",
+    "email":"email",
+    "password":"password",
+    "remember":"remember me",
+    "forget":"forgot password",
+    "account":"dont have account",
+    "create":"create account"
+
+}

@@ -1,0 +1,20 @@
+{
+    "mail":"email",
+    "fname":"first Name",
+    "lname":"Last name",
+    "phone":"phone number",
+    "zip":"zip code",
+    "date":"birth date",
+    "gender":"gender",
+    "male":"male",
+    "female":"female",
+    "change":"Change password",
+    
+    "update":"Update",
+    "delete":"delete Account",
+    "new":"New Password",
+    "current":"Current Password",
+    "cancel":"cancel",
+    "confirm":"confirm",
+    "save":"save changes"
+}

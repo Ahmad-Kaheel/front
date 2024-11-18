@@ -1,0 +1,11 @@
+{
+    "order":"my order",
+    "orderDate":"order date",
+    "total":"total",
+    "sendTo":"send to",
+    "orderNum":"order number",
+    "btn1":"reorder",
+    "btn2":"Invoice",
+    "delever":"delevered in",
+    "view":"view product"
+}
