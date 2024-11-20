@@ -24,8 +24,8 @@ const DiscoverNow = () => {
     const { t, i18n } = useTranslation("discover")
 
     return (
-        <Stack gap={{ xs: "32px", sm: "48px", md: "64px" }} sx={{ paddingY: { xs: "32px", sm: "48px", md: "64px" }, paddingX: { xs: "28px", sm: "32px", md: "128px" } }}>
-            <Typography fontWeight={700} fontSize={{ xs: "24px", sm: "30px", md: "36px" }}>{t("discover")}</Typography>
+        <Stack gap={{ xs: "32px" }} sx={{ paddingY: { xs: "32px", sm: "48px", md: "64px" }, paddingX: { xs: "28px", sm: "32px", md: "128px",lg:"200px",xl:"256px" } }}>
+            <Typography fontWeight={700} fontSize={{ xs: "17px", sm: "22px", md: "30px" }}>{t("discover")}</Typography>
             <Stack 
                 direction={{ xs: "column", md: "row" }} 
                 gap={{ xs: "32px"}} 
@@ -37,8 +37,8 @@ const DiscoverNow = () => {
                             key={index} 
                             sx={{ 
                                 // width: { xs: "100%", sm: "90%", md: "30%" },
-                                height: "372px",
-                                borderRadius: "32px", 
+                                height: "400px",
+                                borderRadius: "16px", 
                                 overflow: "hidden", 
                                 position: "relative" 
                             }}
@@ -47,11 +47,11 @@ const DiscoverNow = () => {
                             <Typography 
                                 sx={{ 
                                     position: "absolute", 
-                                    bottom:  "70px" ,
+                                    bottom:  "75px" ,
                                     [i18n.language === "ar" ? "right" : "left"]: "32px", 
                                     color: "colors.white0", 
                                     fontWeight: 700, 
-                                    fontSize: { xs: "16px", sm: "18px", md: "20px" }, 
+                                    fontSize: { xs: "16px", sm: "18px", md: "20px",lg:"24px" }, 
                                     zIndex: 11 
                                 }}
                             >
@@ -69,7 +69,7 @@ const DiscoverNow = () => {
                                     cursor: "pointer" 
                                 }}
                             >
-                                <Typography sx={{ fontSize: { xs: "14px", sm: "16px" }, fontWeight: 500, color: "colors.white0" }}>
+                                <Typography sx={{ fontSize: { xs: "10px", sm: "12px" }, fontWeight: 500, color: "colors.white0" }}>
                                     {t("choice")}
                                 </Typography>
                             </Box>

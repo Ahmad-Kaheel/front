@@ -41,7 +41,7 @@ const Payment = () => {
     };
 
     return (
-        <Stack sx={{ paddingY: "128px", paddingX: { xs: "20px", sm: "32px", md: "128px",lg:"256px"} , margin: "auto" }} gap={"128px"}>
+        <Stack sx={{ paddingY: "128px", paddingX: { xs: "20px", sm: "32px", md: "128px",xl:"256px"} , margin: "auto" }} gap={"128px"}>
             <Box sx={{ width: '100%' }}>
                 <Stepper activeStep={activeStep} alternativeLabel dir='ltr'>
                     {steps.map((label, index) => (

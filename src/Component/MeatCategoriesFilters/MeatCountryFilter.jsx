@@ -21,8 +21,8 @@ const MeatCountryFilter = () => {
 
     return (
         <Stack 
-            gap={{ xs: "32px", sm: "48px", md: "64px" }}
-            sx={{ paddingY: { xs: "32px", sm: "48px", md: "64px" }, paddingX: { xs: "20px", sm: "32px", md: "128px",lg:"256px"} }}
+            gap={{ xs: "32px" }}
+            sx={{ paddingY: { xs: "32px", sm: "48px", md: "64px" }, paddingX: { xs: "20px", sm: "32px", md: "128px",lg:"200px",xl:"256px"} }}
         >
             <HeadSection name={t('name')} more={t('more')} /> 
 
@@ -48,8 +48,8 @@ const MeatCountryFilter = () => {
                             src={country.flag} 
                             alt={country.name}
                             sx={{
-                                width: { xs: "18px", sm: "20px", md: "30px", lg: "30px" },
-                                height: { xs: "18px", sm: "20px", md: "30px", lg: "30px" },
+                                width: { xs: "18px", sm: "20px", md: "30px", lg: "40px" },
+                                height: { xs: "18px", sm: "20px", md: "30px", lg: "40px" },
                             }}
                         />
                         <Typography variant="body1" sx={{ fontSize: { xs: "12px", sm: "14px", md: "16px" } }}>

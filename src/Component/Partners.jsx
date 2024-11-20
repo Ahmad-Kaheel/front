@@ -23,7 +23,8 @@ const Partners = () => {
     const isXs = useMediaQuery(theme.breakpoints.down('sm'));
     const isSm = useMediaQuery(theme.breakpoints.between('sm', 'md'));
     const isMd = useMediaQuery(theme.breakpoints.between('md', 'lg'));
-    const spaceBetween = isXs ? 25 : isSm ? 20 : isMd ? 25 : 30;
+    const spaceBetween = isXs ? 20 : isSm ? 30 : 32
+
 
    
     const slides = [
@@ -38,19 +39,18 @@ const Partners = () => {
       swiperRef.current.swiper.slidePrev();
     };
   return (
-    <Stack gap={{ xs: "32px", sm: "48px", md: "65px" }}  sx={{ paddingY: { xs: "32px", sm: "48px", md: "64px" }, paddingX: { xs: "28px", sm: "32px", md: "128px",lg:"256px" } }}>
+    <Stack gap={{ xs: "32px", sm: "48px", md: "65px" }}  sx={{ paddingY: { xs: "32px", sm: "48px", md: "64px" }, paddingX: { xs: "28px", sm: "32px", md: "128px",lg:"200px",xl:"256px" } }}>
             <HeadSection name={t('name')} more={t('more')} />
             <Box sx={{ position: "relative" }}>
-                  <Swiper
-                    ref={swiperRef} // استخدام المرجع
-                    dir='rtl'
-                    slidesPerView={isXs ? 3 : isSm? 4.5 : 6}
-                    initialSlide={0}
-                    spaceBetween={spaceBetween}
-                    modules={[Scrollbar]} 
-                    scrollbar={{ draggable: true }}
-                    onSlideChange={(swiper) => console.log('Slide index changed to:', swiper.activeIndex)}
-                    style={{paddingBottom:"20px"}}
+            <Swiper
+                     ref={swiperRef}
+                     dir="rtl"
+                     slidesPerView={isXs ? 2.5 : isSm? 3.5 :isMd?4.5:5.5}
+                     initialSlide={0}
+                     spaceBetween={spaceBetween} // Adjusted gap between slides
+                     modules={[Scrollbar]} 
+                     scrollbar={{ draggable: true }}
+                     style={{paddingBottom:"20px"}}
                   >
                     {slides.map((slide, index) => (
                         <SwiperSlide key={index} style={{ position: "relative" }}>

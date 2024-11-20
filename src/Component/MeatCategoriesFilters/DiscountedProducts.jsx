@@ -20,7 +20,7 @@ const DiscountedProducts = () => {
     const isXs = useMediaQuery(theme.breakpoints.down('sm'));
     const isSm = useMediaQuery(theme.breakpoints.between('sm', 'md'));
     const isMd = useMediaQuery(theme.breakpoints.between('md', 'lg'));
-    const spaceBetween = isXs ? 20 : isSm ? 30 : isMd ? 50 : 64;
+    const spaceBetween = isXs ? 20 : isSm ? 30 :32
 
    
     const slides = [
@@ -41,7 +41,7 @@ const DiscountedProducts = () => {
     };
 
     return (
-        <Stack gap={{ xs: "32px", sm: "48px", md: "65px" }}  sx={{ paddingY: { xs: "32px", sm: "48px", md: "64px" }, paddingX: { xs: "28px", sm: "32px", md: "128px",lg:"256px" } }}>
+        <Stack gap={{ xs: "32px" }}  sx={{ paddingY: { xs: "32px", sm: "48px", md: "64px" }, paddingX: { xs: "28px", sm: "32px", md: "128px",lg:"200px",xl:"256px" } }}>
             <Stack flexDirection={"row"} justifyContent={"space-between"} alignItems={"center"}>
                 <Typography fontWeight={700} sx={{ fontSize: { xs: "20px", sm: "30px", md: "36px" } }} color={"colors.black0"}>
                     {t('name')}
@@ -59,13 +59,14 @@ const DiscountedProducts = () => {
                     style={{paddingBottom:"20px"}}
                   >
                     {slides.map((slide, index) => (
-                        <SwiperSlide key={index} style={{ position: "relative" }}>
+                        <SwiperSlide key={index} >
                             <Box
                                 component="img"
                                 sx={{
                                     width: "100%",
                                     height: "400px",
-                                    borderRadius: "32px"
+                                    borderRadius: "16px",
+                                    position:"relative"
                                 }}
                                 alt={`Slide ${index + 1}`}
                                 src={slide.img}
@@ -78,16 +79,16 @@ const DiscountedProducts = () => {
                                     left: "0",
                                     top: "0",
                                     zIndex: 10,
-                                    borderRadius: "32px",
+                                    borderRadius: "16px",
                                     bgcolor: "rgba(0,0,0,0.4)"
                                 }}
                             />
                             <Stack sx={{ position: "absolute", color: "colors.white0", bottom: "40px", right: "20px", fontWeight: 700, zIndex: 11 }}>
                                 <Box sx={{ position: "relative" }}>
-                                    <Typography fontWeight={700} sx={{ fontSize: { xs: "11px", sm: "15px", md: "20px", lg: "28px" } }}>{slide.oldPrice}</Typography>
+                                    <Typography fontWeight={700} sx={{ fontSize: { xs: "11px", sm: "15px", md: "20px"} }}>{slide.oldPrice}</Typography>
                                     <Box width={"86%"} height={"3px"} sx={{ bgcolor: "colors.red0", position: "absolute", right: "0", top: "50%" }} />
                                 </Box>
-                                <Typography fontWeight={700} sx={{ fontSize: { xs: "15px", sm: "20px", md: "24px", lg: "36px" } }}>{slide.newPrice}</Typography>
+                                <Typography fontWeight={700} sx={{ fontSize: { xs: "15px", sm: "20px", md: "24px"} }}>{slide.newPrice}</Typography>
                             </Stack>
                         </SwiperSlide>
                     ))}

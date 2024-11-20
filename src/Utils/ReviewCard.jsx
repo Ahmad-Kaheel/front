@@ -3,7 +3,7 @@ import React from 'react'
 const ReviewCard = ({userName,review,userImage}) => {
   return (
     <Stack flexDirection={"row"} alignItems={"center"} gap={"16px"} paddingY={"20px"}>
-        <Box component={"img"} src={userImage} width="100px" height="100px"/>
+        <Box component={"img"} src={userImage} width="120px" height="150px"/>
         <Stack gap={'4px'}>
             <Typography fontWeight={600} fontSize={"16px"}>{userName}</Typography>
             <Typography fontWeight={400} fontSize={"12px"}>

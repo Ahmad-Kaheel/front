@@ -21,7 +21,7 @@ const OtherFilter = () => {
     const isXs = useMediaQuery(theme.breakpoints.down('sm'));
     const isSm = useMediaQuery(theme.breakpoints.between('sm', 'md'));
     const isMd = useMediaQuery(theme.breakpoints.between('md', 'lg'));
-    const spaceBetween = isXs ? 20 : isSm ? 30 : isMd ? 50 : 64;
+    const spaceBetween = isXs ? 20 : isSm ? 30 : 32
     const slides = [
       { img: slide1,type:"لحم متبل" },
       { img: slide2,type:"لحم مبرد" },
@@ -43,7 +43,7 @@ const OtherFilter = () => {
       swiperRef.current.swiper.slidePrev();
     };
   return (
-    <Stack  gap={"65px"} sx={{ paddingY: { xs: "32px", sm: "48px", md: "64px" }, paddingX: { xs: "28px", sm: "32px", md: "128px" ,lg:"256px"}}}>
+    <Stack  gap={"32px"} sx={{ paddingY: { xs: "32px", sm: "48px", md: "64px" }, paddingX: { xs: "28px", sm: "32px", md: "128px",lg:"200px" ,xl:"256px"}}}>
         <HeadSection name={t('name')} more={t("more")} />
         <Box sx={{position:"relative"}}>
       <Swiper
@@ -53,7 +53,6 @@ const OtherFilter = () => {
         slidesPerView={isXs ? 1 : isSm? 1.5 :isMd?2.5:3.3}
         initialSlide={0}
         spaceBetween={spaceBetween}
-        centeredSlides
         modules={[Scrollbar]} 
         scrollbar={{ draggable: true }}
         onSlideChange={(swiper) => console.log('Slide index changed to:', swiper.activeIndex)}
@@ -65,8 +64,8 @@ const OtherFilter = () => {
               component="img"
               sx={{
                 width: "100%",
-                height: "310px",
-                borderRadius: "32px",
+                height: "400px",
+                borderRadius: "16px",
               }}
               alt={`Slide ${index + 1}`}
               src={slide.img}

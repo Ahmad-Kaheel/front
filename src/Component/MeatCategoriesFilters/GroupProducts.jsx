@@ -23,7 +23,7 @@ const GroupProducts = () => {
     const isXs = useMediaQuery(theme.breakpoints.down('sm'));
     const isSm = useMediaQuery(theme.breakpoints.between('sm', 'md'));
     const isMd = useMediaQuery(theme.breakpoints.between('md', 'lg'));
-    const spaceBetween = isXs ? 20 : isSm ? 30 : isMd ? 50 : 64;
+    const spaceBetween = isXs ? 20 : isSm ? 30 : 32
 
    
     const slides = [
@@ -45,13 +45,13 @@ const GroupProducts = () => {
       swiperRef.current.swiper.slidePrev();
     };
   return (
-    <Stack gap={{ xs: "32px", sm: "48px", md: "65px" }}  sx={{ paddingY: { xs: "32px", sm: "48px", md: "64px" }, paddingX: { xs: "28px", sm: "32px", md: "128px",lg:"256px" } }}>
+    <Stack gap={{ xs: "32px", sm: "48px", md: "65px" }}  sx={{ paddingY: { xs: "32px", sm: "48px", md: "64px" }, paddingX: { xs: "28px", sm: "32px", md: "128px",lg:"200px",xl:"256px" } }}>
             <HeadSection name={t('name')} more={t('more')} />
             <Box sx={{ position: "relative" }}>
                   <Swiper
                      ref={swiperRef}
                      dir="rtl"
-                     slidesPerView={isXs ? 1 : isSm? 1.5 : 3}
+                     slidesPerView={isXs ? 1 : isSm? 1.5 :isMd?2.5:3}
                      initialSlide={0}
                      spaceBetween={spaceBetween} // Adjusted gap between slides
                      modules={[Scrollbar]} 
