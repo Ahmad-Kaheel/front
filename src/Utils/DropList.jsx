@@ -34,8 +34,14 @@ export default function DropList({ anchorEl, open, handleClose, setOpen }) {
   ];
 
   return (
-    <Box>
+    <Box >
       <Menu
+        sx={{
+          '& .MuiPaper-root': {
+            borderRadius: '12px', // تحديد الحواف الدائرية هنا
+            boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)', // اختيارياً، إضافة ظل لجعل المظهر جذاباً
+          },
+        }}
         id="fade-menu"
         MenuListProps={{
           'aria-labelledby': 'fade-button',
@@ -45,7 +51,7 @@ export default function DropList({ anchorEl, open, handleClose, setOpen }) {
         onClose={handleClose}
         role="menu" // إضافة role لتعريف هذا كقائمة منسدلة
       >
-        <Stack gap={"12px"} sx={{ padding: "16px 32px" }}>
+        <Stack gap={"12px"} sx={{ padding: "16px 32px"}}>
           {menuItems.map((item, index) => (
             <React.Fragment key={index}>
               <MenuItem onClick={item.onClick} role="menuitem" aria-label={item.label}>

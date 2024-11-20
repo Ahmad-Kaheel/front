@@ -60,7 +60,7 @@ const CheifChoices = () => {
                   >
                     {slides.map((slide, index) => (
                         <SwiperSlide key={index} style={{ position: "relative" }}>
-                            <ProductCard image={slide.img} name={slide.name} price={slide.price} />
+                            <ProductCard  name={slide.name} price={slide.price} />
                         </SwiperSlide>
                     ))}
                 </Swiper>

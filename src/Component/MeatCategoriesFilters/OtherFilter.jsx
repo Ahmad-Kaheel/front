@@ -5,9 +5,14 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import slide1 from "../../assets/images-and-icons/hero/slide1.jpg";
-import slide2 from "../../assets/images-and-icons/hero/slide2.jpg";
-import slide3 from "../../assets/images-and-icons/hero/slide3.jpg";
+import slide1 from "../../assets/images-and-icons/CategoryFilters/Cooled.png";
+import slide2 from "../../assets/images-and-icons/CategoryFilters/Frozen.png";
+import slide3 from "../../assets/images-and-icons/CategoryFilters/Imported.png";
+import slide4 from "../../assets/images-and-icons/CategoryFilters/Soft.png";
+import slide5 from "../../assets/images-and-icons/CategoryFilters/Spiced.png";
+
+
+
 import left from "../../assets/images-and-icons/hero/left.svg";
 import right from "../../assets/images-and-icons/hero/right.svg";
 import { useTranslation } from 'react-i18next';
@@ -25,10 +30,10 @@ const OtherFilter = () => {
     const slides = [
       { img: slide1,type:"لحم متبل" },
       { img: slide2,type:"لحم مبرد" },
-      { img: slide1,type:"لحم متبل" },
-      { img: slide1,type:"لحم متبل" },
+      { img: slide3,type:"لحم متبل" },
+      { img: slide4,type:"لحم متبل" },
 
-      { img: slide1,type:"لحم متبل" },
+      { img: slide5,type:"لحم متبل" },
 
       { img: slide3,type:"لحم شرائح" }
     ];

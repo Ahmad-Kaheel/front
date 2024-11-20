@@ -1,6 +1,6 @@
 import { Box, Breadcrumbs, Button, IconButton, Link, Stack, Tab, Tabs, Typography } from '@mui/material';
 import React, { useState } from 'react';
-import img1 from "../assets/images-and-icons/CategoryFilters/Cooled.png";
+import img1 from "../assets/images-and-icons/CategoryFilters/img1.jpg";
 import img2 from "../assets/images-and-icons/CategoryFilters/Frozen.png";
 import img3 from "../assets/images-and-icons/CategoryFilters/Imported.png";
 import img4 from "../assets/images-and-icons/CategoryFilters/Soft.png";
@@ -48,7 +48,7 @@ const Product = () => {
     setValue(newValue);
   };
   return (
-    <Stack gap="64px" sx={{ paddingY: "64px", paddingX: { xs: "20px", sm: "32px", md: "128px", lg: "256px" } }}>
+    <Stack gap="64px" sx={{ paddingY: "64px", paddingX: { xs: "20px", sm: "32px", md: "128px", lg: "200px",xl:"256px" } }}>
       <Breadcrumbs aria-label="breadcrumb">
         <Link underline="hover" color="inherit" href="/">{t("link1")}</Link>
         <Link underline="hover" color="inherit" href="/m">{t("link2")}</Link>
@@ -88,7 +88,7 @@ const Product = () => {
               height: "100%"
             }}
           >
-            <Box component="img" src={mainImage} sx={{ width: { xs: "300px", lg: "500px" }, height: "auto", maxHeight: "100%" }} />
+            <Box component="img" src={mainImage} sx={{ width: { xs: "300px", lg: "500px" }, height: "auto",borderRadius:"16px", maxHeight: "100%" }} />
             <Stack position={"absolute"} top={"30px"} left={{ xs: "20px", lg: "60px" }} zIndex={10}>
               <IconButton aria-label="add to favorites" onClick={() => toggleFavorite()}>
                 {favorites ? (

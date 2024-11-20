@@ -1,8 +1,9 @@
 import { Box, Stack, Typography } from '@mui/material'
 import React from 'react'
-import offer1 from "../assets/images-and-icons/hero/slide1.jpg"
-import offer2 from "../assets/images-and-icons/hero/slide2.jpg"
-import offer3 from "../assets/images-and-icons/hero/slide3.jpg"
+import offer1 from "../assets/images-and-icons/CategoryFilters/img1.jpg";
+
+import offer2 from "../assets/images-and-icons/CategoryFilters/img1.jpg";
+import offer3 from "../assets/images-and-icons/CategoryFilters/img1.jpg";
 import { useTranslation } from 'react-i18next'
 
 const newOffers = [
@@ -27,8 +28,9 @@ const DiscoverNow = () => {
         <Stack gap={{ xs: "32px" }} sx={{ paddingY: { xs: "32px", sm: "48px", md: "64px" }, paddingX: { xs: "28px", sm: "32px", md: "128px",lg:"200px",xl:"256px" } }}>
             <Typography fontWeight={700} fontSize={{ xs: "17px", sm: "22px", md: "30px" }}>{t("discover")}</Typography>
             <Stack 
-                direction={{ xs: "column", md: "row" }} 
+                direction={{ xs: "column", sm: "row" }} 
                 gap={{ xs: "32px"}} 
+                justifyContent={"space-between"}
                 alignItems={{ xs: "center", md: "flex-start" }}
             >
                 {
@@ -36,7 +38,7 @@ const DiscoverNow = () => {
                         <Box 
                             key={index} 
                             sx={{ 
-                                // width: { xs: "100%", sm: "90%", md: "30%" },
+                                width:{xs:"100%",md:"40%"},
                                 height: "400px",
                                 borderRadius: "16px", 
                                 overflow: "hidden", 

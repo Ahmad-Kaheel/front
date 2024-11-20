@@ -13,6 +13,7 @@ import tabby from '../assets/images-and-icons/pay/pay8.png';
 import stc from '../assets/images-and-icons/pay/stc.png';
 import paypal from '../assets/images-and-icons/pay/paypal.png';
 import buis from '../assets/images-and-icons/pay/Business.svg';
+import PaymentInfo from './PaymentInfo';
 
 const Checkout = () => {
   const [value, setValue] = useState('');
@@ -21,7 +22,8 @@ const Checkout = () => {
   const handleChange = (event) => setValue(event.target.value);
 
   return (
-    <Stack spacing={4} width={{ xs: '100%', md: '400px' }}>
+    <Stack gap={{xs:"20px",md:"22px",lg:"64px"}} direction={{xs:"column",md:"row"}}>
+      <Stack spacing={4} width={{ xs: '100%', md: '400px' }}>
       <Stack spacing={2}>
         <Stack direction="row" spacing={2} alignItems="center">
           <Box component="img" src={buis} alt="Business" />
@@ -53,6 +55,9 @@ const Checkout = () => {
           sx={{ bgcolor: 'white' }}
         />
       </Stack>
+    
+
+    </Stack>
     </Stack>
   );
 };

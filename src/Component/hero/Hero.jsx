@@ -7,6 +7,8 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { Box } from '@mui/material';
 import slide1 from "../../assets/images-and-icons/hero/slide1.jpg";
+import slide0 from "../../assets/images-and-icons/hero/slide0.png";
+
 import slide2 from "../../assets/images-and-icons/hero/slide2.jpg";
 import slide3 from "../../assets/images-and-icons/hero/slide3.jpg";
 import left from "../../assets/images-and-icons/hero/left.svg";
@@ -15,6 +17,8 @@ import right from "../../assets/images-and-icons/hero/right.svg";
 const Hero = () => {
   const swiperRef = useRef(null); // مرجع للسلايدر
   const slides = [
+    { img: slide0 },
+
     { img: slide2 },
     { img: slide1 },
     { img: slide3 }

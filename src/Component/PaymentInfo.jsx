@@ -120,11 +120,13 @@ const PaymentInfo = ({ activeStep, setActiveStep, handleNext }) => {
                     <Typography fontWeight={400} fontSize="14px" color='colors.black0'>555رس</Typography>
                 </Stack>
             </Stack>
-            <Button onClick={handleNext} variant="contained" sx={{ bgcolor: "colors.red0", width: { xs: "100%", sm: "auto" } }}>
-                {
-                    activeStep === 0 ? t("btn1") : activeStep === 1 ? t("btn2") : t("btn3")
-                }
-            </Button>
+            <Button 
+    onClick={handleNext} 
+    variant="contained" 
+    sx={{ bgcolor: "colors.red0", width: { xs: "100%", sm: "auto" } }}
+>
+    {activeStep === 0 ? t("btn1") : activeStep === 1 ? t("btn2") : t("btn3")}
+</Button>
         </Stack>
     )
 }

@@ -49,8 +49,7 @@ const DeleveryInfo = () => {
                 </Stack>
             </Stack>
         </Stack>
-    </Stack>
-    <PaymentInfo />
+        </Stack>
     </Stack>
   )
 }

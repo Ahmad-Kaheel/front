@@ -44,7 +44,7 @@ const Profile = () => {
     };
 
     return (
-        <Stack sx={{ padding: { xs: "20px", sm: "32px", md: "64px", lg: "128px", width: { xs: "100%", md: "400px" } }, gap: "32px" }}>
+        <Stack sx={{ padding: { xs: "20px", sm: "32px", md: "64px", lg: "200px", width: { xs: "100%", md: "400px" } }, gap: "32px" }}>
             <Typography>{t("account")}</Typography>
             <Stack direction={{ xs: "column", md: "row" }} gap={"32px"}>
                 <ToggleButtonGroup
@@ -59,7 +59,7 @@ const Profile = () => {
                         value="data"
                         aria-label="list"
                         disabled={view === "data"}
-                        sx={{ padding: { xs: "8px", sm: "16px", md: "32px" }, borderWidth: "2px", borderColor: "colors.gray0", borderRadius: { xs: "0", md: "24px 24px 0 0" } }}
+                        sx={{ padding: { xs: "8px", sm: "16px", md: "32px" }, borderWidth: "2px", borderColor: "colors.gray0", borderRadius: { xs: "0", md: "14px 14px 0 0" } }}
                     >
                         <Typography>{t("btn1")}</Typography>
                     </ToggleButton>
@@ -83,7 +83,7 @@ const Profile = () => {
                         value="favorite"
                         aria-label="quilt"
                         disabled={view === "favorite"}
-                        sx={{ padding: { xs: "8px", sm: "16px", md: "32px" }, borderWidth: "2px", borderColor: "colors.gray0" }}
+                        sx={{ padding: { xs: "8px", sm: "16px", md: "32px" }, borderWidth: "2px", borderColor: "colors.gray0" ,borderRadius: { xs: "0", md: "0px 0px 14px 14px" }}}
                     >
                         <Typography>{t("btn4")}</Typography>
                     </ToggleButton>

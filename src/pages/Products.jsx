@@ -11,33 +11,33 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FullscreenExitIcon from '@mui/icons-material/FullscreenExit';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FullScreenImage from '../Component/FullScreenImage';
-import img1 from "../assets/images-and-icons/CategoryFilters/Cooled.png";
-import img2 from "../assets/images-and-icons/CategoryFilters/Frozen.png";
-import img3 from "../assets/images-and-icons/CategoryFilters/Imported.png";
-import img4 from "../assets/images-and-icons/CategoryFilters/Soft.png";
-import img5 from "../assets/images-and-icons/CategoryFilters/Spiced.png";
+import img1 from "../assets/images-and-icons/CategoryFilters/img1.jpg";
+import img2 from "../assets/images-and-icons/CategoryFilters/img1.jpg";
+import img3 from "../assets/images-and-icons/CategoryFilters/img1.jpg";
+import img4 from "../assets/images-and-icons/CategoryFilters/img1.jpg";
+import img5 from "../assets/images-and-icons/CategoryFilters/img1.jpg";
 import QuickView from '../Component/QuikView';
 const categories = [
-  { img: cat1, name: "لحوم" },
-  { img: cat1, name: "دجاج" },
-  { img: cat1, name: "بهارات وتوابل" },
-  { img: cat1, name: "خضار وفواكه" },
-  { img: cat1, name: "أصناف أخرى" },
+  { img: img1, name: "لحوم" },
+  { img: img1, name: "دجاج" },
+  { img: img1, name: "بهارات وتوابل" },
+  { img: img1, name: "خضار وفواكه" },
+  { img: img1, name: "أصناف أخرى" },
 ];
 
 const products = [
-  { img: cat1, name: "اسم الصنف", desc: "وصف المنتج وما يحتويه من مكونات", price: "120 ر.س", images: [img1, img2, img3, img4, img5] },
-  { img: cat1, name: "اسم الصنف", desc: "وصف المنتج وما يحتويه من مكونات", price: "120 ر.س", images: [img1, img2, img3, img4, img5] },
-  { img: cat1, name: "اسم الصنف", desc: "وصف المنتج وما يحتويه من مكونات", price: "120 ر.س", images: [img1, img2, img3, img4, img5] },
-  { img: cat1, name: "اسم الصنف", desc: "وصف المنتج وما يحتويه من مكونات", price: "120 ر.س", images: [img1, img2, img3, img4, img5] },
-  { img: cat1, name: "اسم الصنف", desc: "وصف المنتج وما يحتويه من مكونات", price: "120 ر.س", images: [img1, img2, img3, img4, img5] },
-  { img: cat1, name: "اسم الصنف", desc: "وصف المنتج وما يحتويه من مكونات", price: "120 ر.س", images: [img1, img2, img3, img4, img5] },
-  { img: cat1, name: "اسم الصنف", desc: "وصف المنتج وما يحتويه من مكونات", price: "120 ر.س", images: [img1, img2, img3, img4, img5] },
-  { img: cat1, name: "اسم الصنف", desc: "وصف المنتج وما يحتويه من مكونات", price: "120 ر.س", images: [img1, img2, img3, img4, img5] },
-  { img: cat1, name: "اسم الصنف", desc: "وصف المنتج وما يحتويه من مكونات", price: "120 ر.س", images: [img1, img2, img3, img4, img5] },
-  { img: cat1, name: "اسم الصنف", desc: "وصف المنتج وما يحتويه من مكونات", price: "120 ر.س", images: [img1, img2, img3, img4, img5] },
-  { img: cat1, name: "اسم الصنف", desc: "وصف المنتج وما يحتويه من مكونات", price: "120 ر.س", images: [img1, img2, img3, img4, img5] },
-  { img: cat1, name: "اسم الصنف", desc: "وصف المنتج وما يحتويه من مكونات", price: "120 ر.س", images: [img1, img2, img3, img4, img5] },
+  { img: img1, name: "اسم الصنف", desc: "وصف المنتج وما يحتويه من مكونات", price: "120 ر.س", images: [img1, img2, img3, img4, img5] },
+  { img: img1, name: "اسم الصنف", desc: "وصف المنتج وما يحتويه من مكونات", price: "120 ر.س", images: [img1, img2, img3, img4, img5] },
+  { img: img1, name: "اسم الصنف", desc: "وصف المنتج وما يحتويه من مكونات", price: "120 ر.س", images: [img1, img2, img3, img4, img5] },
+  { img: img1, name: "اسم الصنف", desc: "وصف المنتج وما يحتويه من مكونات", price: "120 ر.س", images: [img1, img2, img3, img4, img5] },
+  { img: img1, name: "اسم الصنف", desc: "وصف المنتج وما يحتويه من مكونات", price: "120 ر.س", images: [img1, img2, img3, img4, img5] },
+  { img: img1, name: "اسم الصنف", desc: "وصف المنتج وما يحتويه من مكونات", price: "120 ر.س", images: [img1, img2, img3, img4, img5] },
+  { img: img1, name: "اسم الصنف", desc: "وصف المنتج وما يحتويه من مكونات", price: "120 ر.س", images: [img1, img2, img3, img4, img5] },
+  { img: img1, name: "اسم الصنف", desc: "وصف المنتج وما يحتويه من مكونات", price: "120 ر.س", images: [img1, img2, img3, img4, img5] },
+  { img: img1, name: "اسم الصنف", desc: "وصف المنتج وما يحتويه من مكونات", price: "120 ر.س", images: [img1, img2, img3, img4, img5] },
+  { img: img1, name: "اسم الصنف", desc: "وصف المنتج وما يحتويه من مكونات", price: "120 ر.س", images: [img1, img2, img3, img4, img5] },
+  { img: img1, name: "اسم الصنف", desc: "وصف المنتج وما يحتويه من مكونات", price: "120 ر.س", images: [img1, img2, img3, img4, img5] },
+  { img: img1, name: "اسم الصنف", desc: "وصف المنتج وما يحتويه من مكونات", price: "120 ر.س", images: [img1, img2, img3, img4, img5] },
 
 
   // إضافة المنتجات الأخرى...
@@ -56,7 +56,7 @@ const Products = () => {
   };
 
   return (
-    <Stack gap={{ xs: "32px", md: "64px" }} sx={{ paddingX: { xs: "28px", sm: "32px", md: "128px", lg: "256px" }, paddingY: "64px" }}>
+    <Stack gap={{ xs: "32px", md: "64px" }} sx={{ paddingX: { xs: "28px", sm: "32px", md: "128px",lg:"200px", xl: "256px" }, paddingY: "64px" }}>
       <Breadcrumbs aria-label="breadcrumb">
         <Link underline="hover" color="inherit" href="/">{t("link1")}</Link>
         <Link underline="hover" color="inherit" > {t("all")}</Link>
@@ -103,8 +103,10 @@ const Products = () => {
                     aria-labelledby="demo-controlled-radio-buttons-group"
                     name="controlled-radio-buttons-group"
                   >
-                    <FormControlLabel value="female" control={<Radio />} label="Female" />
-                    <FormControlLabel value="male" control={<Radio />} label="Male" />
+                    <FormControlLabel value="female" control={<Radio />} label="السعر بين100-300" />
+                    <FormControlLabel value="male" control={<Radio />} label="السعر بين 300-1000" />
+                    <FormControlLabel value="male" control={<Radio />} label="السعر أكبر من 1000" />
+
                   </RadioGroup>
                 </Stack>
               </Stack>

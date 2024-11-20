@@ -41,7 +41,7 @@ const Payment = () => {
     };
 
     return (
-        <Stack sx={{ paddingY: "128px", paddingX: { xs: "20px", sm: "32px", md: "128px",xl:"256px"} , margin: "auto" }} gap={"128px"}>
+        <Stack sx={{ paddingY: "128px", paddingX: { xs: "20px", sm: "32px", md: "128px",lg:"200px",xl:"256px"} , margin: "auto" }} gap={"128px"}>
             <Box sx={{ width: '100%' }}>
                 <Stepper activeStep={activeStep} alternativeLabel dir='ltr'>
                     {steps.map((label, index) => (
@@ -57,13 +57,18 @@ const Payment = () => {
                 
                 
                 {/* الجزء المتغير بناءً على الروت الفرعي */}
-                <Box sx={{ width: "100%" }}>
+                <Stack direction={"row"} gap={"60px"}>
+                <PaymentInfo 
+                        activeStep={activeStep} 
+                        setActiveStep={setActiveStep} 
+                        handleNext={handleNext} 
+                    />
                     <Routes>
-                        <Route path="/" element={<PaymentInfo />} />
+                        <Route path="/" index />
                         <Route path="delevery" element={<DeleveryInfo />} />
                         <Route path="checkout" element={<Checkout />} />
                     </Routes>
-                </Box>
+                </Stack>
             </Stack>
         </Stack>
     );

@@ -55,13 +55,14 @@ export default function Basket({ openDrawer, handleDrawerClose }) {
                     </Stack>
                     
                 </Stack>
-                <Stack justifyContent={"space-between"} alignItems={"flex-end"}>
-                    <Box component={"img"} src={delet} sx={{width:"18px",height:"20px",cursor:"pointer"}}/>
-                    <Stack flexDirection={"row"} sx={{border:1,padding:"5px"}} gap={"16px"}>
-                        <Typography  fontWeight={600} fontSize={"24px"} color='colors.black0' sx={{cursor:"pointer"}}>+</Typography>
-                        <Typography fontWeight={600} fontSize={"24px"} color='colors.black0' sx={{cursor:"pointer"}}>1</Typography>
-                        <Typography fontWeight={600} fontSize={"24px"} color='colors.black0' sx={{cursor:"pointer"}}>-</Typography>
+                <Stack direction={"row"} justifyContent="space-between" alignItems="center" gap={"20px"}>
+                    <Stack flexDirection="row" sx={{ border: 1, padding: "5px", borderRadius: "10px" }} gap="16px">
+                        <Typography fontWeight={600} fontSize="24px" color='colors.black0' sx={{ cursor: "pointer" }}>+</Typography>
+                        <Typography fontWeight={600} fontSize="24px" color='colors.black0' sx={{ cursor: "pointer" }}>1</Typography>
+                        <Typography fontWeight={600} fontSize="24px" color='colors.black0' sx={{ cursor: "pointer" }}>-</Typography>
                     </Stack>
+                    <Box component="img" src={delet} sx={{ width: "18px", height: "20px", cursor: "pointer" }} />
+
                 </Stack>
             </Stack>
             <Stack gap={"32px"} sx={{padding:"32px",borderRadius:"32px",border:1,borderWidth:"2px"}}>

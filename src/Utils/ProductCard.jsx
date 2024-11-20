@@ -1,9 +1,9 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
 import React from "react";
 import { useTranslation } from "react-i18next";
-
+import pc from  "../assets/images-and-icons/product/pc0.jpg"
 const ProductCard = ({
-  image,
+  image=pc,
   name,
   price,
   onBuyClick,
@@ -92,7 +92,7 @@ const ProductCard = ({
             borderRadius: "8px",
             fontWeight: 600,
             fontSize: "16px",
-            padding: "10px 0",
+            padding: "0px 0",
             alignSelf: i18n.language === "ar" ? "flex-end" : "flex-start", // نفس الإزاحة
           }}
           onClick={onBuyClick}
