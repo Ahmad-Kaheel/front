@@ -24,6 +24,7 @@ import { Typography } from '@mui/material';
 import DeleveryInfo from './Component/DeleveryInfo';
 import Checkout from './Component/Checkout';
 import PaymentInfo from './Component/PaymentInfo';
+import Welcome from './pages/Welcome';
 function App() {
   const { t, i18n } = useTranslation();
 
@@ -39,6 +40,8 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/welcome" element={<Welcome />} />
+
             <Route path="/products" element={<Products />} />
             <Route path="/product" element={<Product />} />
             <Route path='/login' element={<Login />} />

@@ -11,6 +11,10 @@
     box-shadow: 10px 2px 8px 8px #2828280A, -10px -8px 16px -8px #28282814;
 
 }
+.shad-box{
+    box-shadow: 0px 8px 16px 10px #2828280A;
+
+}
 .black-border{
     border: 0.5px solid;
 

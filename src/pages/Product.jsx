@@ -54,14 +54,15 @@ const Product = () => {
         <Link underline="hover" color="inherit" href="/m">{t("link2")}</Link>
         <Typography sx={{ color: 'text.primary' }}>{t("link3")}</Typography>
       </Breadcrumbs>
-      <Stack direction={{ sx: "column", md: "row" }} gap={"64px"} alignItems={{ xs: "center", lg: "start" }} height={"100%"}>
+      <Stack direction={{ xs: "column", md: "row" }} gap={"32px"} sx={{ alignItems: "stretch", height: "100%" }}>
         <Stack
-          direction={{ xs: "column", lg: "row" }}
-          alignItems={{ xs: "center", lg: "stretch" }}
+          direction={{ xs: "column", md: "row" }}
+          alignItems={{ xs: "center", md: "flex-start" }}
           gap={{ xs: "35px", lg: "32px" }}
-          sx={{ flexGrow: 1 }}
+          sx={{ flex: 1 }}
+          height={"auto"}
         >
-          <Stack gap="32px" direction={{ xs: "row", lg: "column" }} sx={{ flexShrink: 0 }}>
+          <Stack gap="32px"  direction={{ xs: "row", md: "column" }}>
             {images.map((image, index) => (
               <Box
                 key={index}
@@ -81,14 +82,28 @@ const Product = () => {
           <Box
             sx={{
               position: "relative",
-              flexGrow: 1,
+              flex: 1,
+              width:"300px",
+              height:"100%",
+              maxHeight: "100%", // تقييد الارتفاع ليكون بنفس ارتفاع المواصفات
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              height: "100%"
+              overflow: "hidden", // منع تجاوز الصورة
+              borderRadius:"16px"
             }}
           >
-            <Box component="img" src={mainImage} sx={{ width: { xs: "300px", lg: "500px" }, height: "auto",borderRadius:"16px", maxHeight: "100%" }} />
+            <Box
+              component="img"
+              src={mainImage}
+              sx={{
+                width:"100%",
+                height: "100%", // تقييد الارتفاع
+                maxHeight: "100%", // الالتزام بأقصى ارتفاع
+                borderRadius: "16px",
+                objectFit: "cover", // ضمان احتواء الصورة داخل الحاوية
+              }}
+            />
             <Stack position={"absolute"} top={"30px"} left={{ xs: "20px", lg: "60px" }} zIndex={10}>
               <IconButton aria-label="add to favorites" onClick={() => toggleFavorite()}>
                 {favorites ? (
@@ -111,7 +126,7 @@ const Product = () => {
             </Stack>
           </Box>
         </Stack>
-        <Stack gap={"25px"} sx={{ flexGrow: 1 }}>
+        <Stack gap={"16px"} sx={{ flex: 1, height: "auto" }}>
           <Stack direction={"row"} gap={"64px"}>
             <Stack gap={"16px"}>
               <Typography fontWeight={600} fontSize={"24px"} color='colors.black0'>6299 ر.س</Typography>
@@ -244,7 +259,7 @@ const Product = () => {
                   <Typography fontWeight={600} fontSize={"40px"}>+</Typography>
                   <SingleProduct image={img1} name={"لحم مبرد"} desc={"من اجود انواع اللحوم"} />
                 </Stack>
-                <Button
+                <Button 
                   variant="outlined"
                   sx={{
                     color: "colors.black0",

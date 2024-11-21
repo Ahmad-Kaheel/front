@@ -56,8 +56,8 @@ const PersonNumberFilter = () => {
               src={person.image}
               alt={person.name}
               sx={{
-                width: index === 0 ? { xs: "20px", sm: "25px", md: "30px" } : { xs: "40px", sm: "50px", md: "60px" }, // Smaller size for the first icon
-                height: index === 0 ? { xs: "30px", sm: "40px", md: "55px" } : { xs: "40px", sm: "50px", md: "60px" },
+                width: index === 0 ? { xs: "20px", sm: "25px", md: "30px" }:index===4? { xs: "45px", sm: "55px", md: "65px" }: { xs: "40px", sm: "50px", md: "60px" }, // Smaller size for the first icon
+                height: index === 0 ? { xs: "30px", sm: "40px", md: "55px" } :index===4? { xs: "45px", sm: "55px", md: "65px" }: { xs: "40px", sm: "50px", md: "60px" },
                 objectFit: "contain",
               }}
             />
