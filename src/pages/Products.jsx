@@ -19,6 +19,7 @@ import img3 from "../assets/images-and-icons/CategoryFilters/img1.jpg";
 import img4 from "../assets/images-and-icons/CategoryFilters/img1.jpg";
 import img5 from "../assets/images-and-icons/CategoryFilters/img1.jpg";
 import QuickView from '../Component/QuikView';
+import { Helmet } from 'react-helmet-async';
 const categories = [
   { img: img1, name: "لحوم" },
   { img: img1, name: "دجاج" },
@@ -58,7 +59,23 @@ const Products = () => {
   };
 
   return (
-    <Stack gap={{ xs: "32px", md: "64px" }} sx={{ paddingX: { xs: "28px", sm: "32px", md: "128px",lg:"200px", xl: "256px" }, paddingY: "64px" }}>
+   <>
+   <Helmet>
+      <title>منتجاتنا | متجر المواد الغذائية</title>
+      <meta name="description" content="اكتشف مجموعة واسعة من المنتجات مثل اللحوم، الدجاج، الخضار والفواكه، والتوابل. تسوق الآن بأفضل الأسعار!" />
+      <meta name="keywords" content="لحوم, دجاج, خضار, فواكه, توابل, متجر المواد الغذائية, شراء منتجات غذائية, منتجات طازجة" />
+      <meta name="author" content="اسم متجرك" />
+      <meta property="og:title" content="منتجاتنا | متجر المواد الغذائية" />
+      <meta property="og:description" content="اكتشف مجموعة واسعة من المنتجات مثل اللحوم، الدجاج، الخضار والفواكه، والتوابل. تسوق الآن بأفضل الأسعار!" />
+      <meta property="og:image" content="رابط_الصورة_المميزة" />
+      <meta property="og:url" content="https://example.com/products" />
+      <meta property="og:type" content="website" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="منتجاتنا | متجر المواد الغذائية" />
+      <meta name="twitter:description" content="اكتشف مجموعة واسعة من المنتجات مثل اللحوم، الدجاج، الخضار والفواكه، والتوابل. تسوق الآن بأفضل الأسعار!" />
+      <meta name="twitter:image" content="رابط_الصورة_المميزة" />
+    </Helmet>
+         <Stack gap={{ xs: "32px", md: "64px" }} sx={{ paddingX: { xs: "28px", sm: "32px", md: "128px",lg:"200px", xl: "256px" }, paddingY: "64px" }}>
       <Breadcrumbs aria-label="breadcrumb">
         <Link underline="hover" color="inherit" href="/">{t("link1")}</Link>
         <Link underline="hover" color="inherit" > {t("all")}</Link>
@@ -193,6 +210,7 @@ const Products = () => {
                     </Stack>
                   </Stack>
                 </Stack>
+   </>
               );
             };
 

@@ -1,5 +1,5 @@
 import { Stack, Typography, FormControl, Select, MenuItem, Box } from '@mui/material';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import car from "../assets/images-and-icons/nav1/car.svg";
 import location from "../assets/images-and-icons/nav1/location.svg";
 import product from "../assets/images-and-icons/nav1/product.svg";
@@ -10,17 +10,28 @@ import { useTranslation } from 'react-i18next';
 
 const Nav1 = () => {
     const { t, i18n } = useTranslation('nav1');
-    const [locat, setLocat] = useState('Ryadh');
-    const language = i18n.language;
+    const [locat, setLocat] = useState('Ryadh'); // الموقع الافتراضي
+    const language = i18n.language; // اللغة الحالية من i18n
+
+    // استعادة اللغة من localStorage عند بدء التطبيق
+    useEffect(() => {
+        const savedLanguage = localStorage.getItem('language') ; // قراءة اللغة المحفوظة
+        if (savedLanguage !== i18n.language) {
+            i18n.changeLanguage(savedLanguage); // تحديث i18n باللغة المحفوظة
+        }
+        console.log(i18n.language);
+    }, [i18n]);
 
     const handleChange = (event) => {
         setLocat(event.target.value);
     };
 
     const handleToggleLanguage = () => {
-        i18n.changeLanguage(language === 'ar' ? 'en' : 'ar');
-    };
-
+        const newLanguage = i18n.language === 'ar' ? 'en' : 'ar';
+        i18n.changeLanguage(newLanguage); // تغيير اللغة
+        localStorage.setItem('language', newLanguage); // حفظ اللغة
+      };
+      
     return (
         <Stack
             direction={"row"} 
@@ -28,25 +39,24 @@ const Nav1 = () => {
             justifyContent={"space-between"} 
             className='gradient-border'
             sx={{
-                paddingX: { xs: "28px", sm: "32px", md: "128px",lg:"200px", xl:"256px" },
+                paddingX: { xs: "28px", sm: "32px", md: "128px", lg: "200px", xl: "256px" },
                 paddingY: "16px",
                 height: { xs: "auto", md: "65px" },
                 borderBottomWidth: "4px",
                 borderBottomStyle: "solid",
                 borderImage: "gradient.red_line",
             }}
-            role="navigation" // إضافة تحسين SEO للتوضيح
+            role="navigation" // تحسين SEO
             aria-label={t('main_navigation')}
         >
             <Stack direction={"row"} gap={{ xs: "8px", md: "16px" }} flexWrap="wrap">
-                
-                <Stack direction={"row"} alignItems={"center"}  gap="7px">
+                <Stack direction={"row"} alignItems={"center"} gap="7px">
                     <Box component={"img"} src={halal} alt={t('alt_halal_image')} sx={{ width: {xs:"12px",md:"24px"}, height:{xs:"12px",md:"24px"}}} />
                     <Typography color="text.paraghraph" sx={{fontSize:{xs:"9px",md:"14px",lg:"15px"}}}>
                         {t('halal')}
                     </Typography>
                 </Stack>
-                <Stack direction={"row"} alignItems={"center"}  gap="7px">
+                <Stack direction={"row"} alignItems={"center"} gap="7px">
                     <Box component={"img"} src={product} alt={t('alt_product_image')} sx={{ width: {xs:"12px",md:"24px"}, height:{xs:"12px",md:"24px"}}} />
                     <Typography color="text.paraghraph" sx={{fontSize:{xs:"9px",md:"14px",lg:"15px"}}}>
                         {t('product')}
@@ -104,6 +114,6 @@ const Nav1 = () => {
             </Stack>
         </Stack>
     );
-}
+};
 
 export default Nav1;

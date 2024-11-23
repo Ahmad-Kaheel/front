@@ -1,0 +1,17 @@
+{
+    "welcome": {
+      "title": "Welcome to Golden Meat",
+      "description": "A brief explanation of the work and services provided by Golden Meat Company",
+      "forCompanies": {
+        "title": "Golden Meat for Companies",
+        "description": "A brief explanation of the services for companies provided by Golden Meat Company",
+        "login": "Login"
+      },
+      "forIndividuals": {
+        "title": "Golden Meat for Individuals",
+        "description": "A brief explanation of the services for individuals provided by Golden Meat Company",
+        "login": "Login"
+      }
+    }
+  }
+  

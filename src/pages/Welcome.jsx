@@ -1,15 +1,19 @@
 import { Box, Stack, Typography } from '@mui/material';
 import React from 'react';
+import { useTranslation } from 'react-i18next'; // استيراد مكتبة الترجمة
 import user from "../assets/images-and-icons/welcome/user.svg";
 import company from "../assets/images-and-icons/welcome/company.svg";
 
 const Welcome = () => {
+  const { t ,i18n} = useTranslation("welcome"); // استخدام الترجمة
+
   return (
     <Stack 
       sx={{
-        height: "100vh", 
+        minHeight: "100vh", 
         width: "100%", 
         justifyContent: "center", 
+        paddingY:"32px",
         alignItems: "center", 
         gap: { xs: "32px", sm: "64px" } // Adjust gap based on screen size
       }}
@@ -26,7 +30,7 @@ const Welcome = () => {
           color='text.titles'
           textAlign="center"
         >
-          أهلاً بكم في اللحم الذهبي
+          {t("welcome.title")}
         </Typography>
         <Typography 
           fontSize={{ xs: "14px", sm: "18px" }} // Adjust font size based on screen size
@@ -34,7 +38,7 @@ const Welcome = () => {
           fontWeight={400} 
           color='text.paragraph'
         >
-          شرح بسيط يوضح عمل والخدمات المقدمة من قبل شركة اللحم الذهبي
+          {t("welcome.description")}
         </Typography>
       </Stack>
 
@@ -42,15 +46,15 @@ const Welcome = () => {
         direction={{ xs: "column", sm: "row" }} // Change direction on small screens
         gap={"32px"} 
         justifyContent="center" 
+        alignItems={"center"}
         sx={{ width: "100%", maxWidth: "1200px" }} // Limit max width on large screens
       >
         {/* اللحم الذهبي للشركات */}
         <Stack 
           gap={"32px"} 
           className='shad-box' 
-          
           sx={{ 
-            padding: "32px", // Reduced padding for small screens
+            padding: "32px", 
             width: "100%", 
             maxWidth: "350px", 
             textAlign: "center" 
@@ -65,13 +69,13 @@ const Welcome = () => {
             fontSize={"16px"} 
             fontWeight={600}
           >
-            اللحم الذهبي للشركات
+            {t("welcome.forCompanies.title")}
           </Typography>
           <Typography 
             fontSize={"14px"} 
             fontWeight={400}
           >
-            شرح بسيط يوضح عمل شركة اللحم الذهبي
+            {t("welcome.forCompanies.description")}
           </Typography>
           <Typography 
             color={"colors.red0"} 
@@ -80,7 +84,7 @@ const Welcome = () => {
             fontWeight={400} 
             sx={{ textDecoration: "underline", cursor: "pointer",textAlign:"end" }}
           >
-            دخول
+            {t("welcome.forCompanies.login")}
           </Typography>
         </Stack>
 
@@ -104,13 +108,13 @@ const Welcome = () => {
             fontSize={"16px"} 
             fontWeight={600}
           >
-            اللحم الذهبي للأفراد
+            {t("welcome.forIndividuals.title")}
           </Typography>
           <Typography 
             fontSize={"14px"} 
             fontWeight={400}
           >
-            شرح بسيط يوضح عمل شركة اللحم الذهبي
+            {t("welcome.forIndividuals.description")}
           </Typography>
           <Typography 
             color={"colors.red0"} 
@@ -119,7 +123,7 @@ const Welcome = () => {
             fontWeight={400} 
             sx={{ textDecoration: "underline", cursor: "pointer",textAlign:"end" }}
           >
-            دخول
+            {t("welcome.forIndividuals.login")}
           </Typography>
         </Stack>
       </Stack>

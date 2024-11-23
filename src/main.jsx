@@ -57,77 +57,85 @@ import  arOrder from "./locales/ar/auth/order.json"
 import  enOrder from "./locales/en/auth/order.json"
 import arPayment from "./locales/ar/payment.json"
 import enPayment from "./locales/en/payment.json"
-
-
+import arWelcome from "./locales/ar/welcome.json"
+import enWelcome from "./locales/en/welcome.json"
+import arCheckout from "./locales/ar/checkout.json"
+import enCheckout from "./locales/en/checkout.json"
 
 import store from './state/Store';
 import { Provider } from 'react-redux';
+const savedLanguage = localStorage.getItem('language') || 'ar';
+
 i18n
-  .use(LanguageDetector) // للكشف التلقائي عن لغة المتصفح
-  .use(initReactI18next) // للتكامل مع React
+  .use(LanguageDetector)
+  .use(initReactI18next)
   .init({
     resources: {
-     ar:{
-      nav1:arNav1Translation,
-      nav2:arNav2Translation,
-      mobileNav:arMobileNav,
-      discover:arDiscover,
-      other:arOther,
-      country:arCountry,
-      animals:arAnimals,
-      discount:arDiscount,
-      person:arPerson,
-      group:arGroup,
-      choices:arChoice,
-      footer:arFooter,
-      review:arReview,
-      partners:arPartners,
-      basket:arBasket,
-      discoverDrawer:arDiscoverDrawer,
-      drop:arDrop,
-      login:arLogin,
-      registerC:arRegisterC,
-      registerB:arRegisterB,
-      products:arProducts,
-      product:arProduct,
-      profile:arProfile,
-      profileData:arProfileData,
-      order:arOrder,
-      payment:arPayment
-     },
-     en:{
-      nav1:enNav1Translation,
-      nav2:enNav2Translation,
-      mobileNav:enMobileNav,
-      discover:enDiscover,
-      other:enOther,
-      country:enCountry,
-      animals:enAnimals,
-      discount:enDiscount,
-      person:enPerson,
-      group:enGroup,
-      choices:enChoice,
-      footer:enFooter,
-      review:enReview,
-      partners:enPartners,
-      basket:enBasket,
-      discoverDrawer:enDiscoverDrawer,
-      drop:enDrop,
-      login:enLogin,
-      registerC:enRegisterC,
-      registerB:enRegisterB,
-      products:enProducts,
-      product:enProduct,
-      profile:enProfile,
-      profileData:enProfileData,
-      order:enOrder,
-      payment:enPayment
-     }
+      ar: {
+        nav1: arNav1Translation,
+        nav2: arNav2Translation,
+        mobileNav: arMobileNav,
+        discover: arDiscover,
+        other: arOther,
+        country: arCountry,
+        animals: arAnimals,
+        discount: arDiscount,
+        person: arPerson,
+        group: arGroup,
+        choices: arChoice,
+        footer: arFooter,
+        review: arReview,
+        partners: arPartners,
+        basket: arBasket,
+        discoverDrawer: arDiscoverDrawer,
+        drop: arDrop,
+        login: arLogin,
+        registerC: arRegisterC,
+        registerB: arRegisterB,
+        products: arProducts,
+        product: arProduct,
+        profile: arProfile,
+        profileData: arProfileData,
+        order: arOrder,
+        payment: arPayment,
+        welcome: arWelcome,
+        checkout: arCheckout,
+      },
+      en: {
+        nav1: enNav1Translation,
+        nav2: enNav2Translation,
+        mobileNav: enMobileNav,
+        discover: enDiscover,
+        other: enOther,
+        country: enCountry,
+        animals: enAnimals,
+        discount: enDiscount,
+        person: enPerson,
+        group: enGroup,
+        choices: enChoice,
+        footer: enFooter,
+        review: enReview,
+        partners: enPartners,
+        basket: enBasket,
+        discoverDrawer: enDiscoverDrawer,
+        drop: enDrop,
+        login: enLogin,
+        registerC: enRegisterC,
+        registerB: enRegisterB,
+        products: enProducts,
+        product: enProduct,
+        profile: enProfile,
+        profileData: enProfileData,
+        order: enOrder,
+        payment: enPayment,
+        welcome: enWelcome,
+        checkout: enCheckout,
+      },
     },
-    fallbackLng: 'ar', // اللغة الافتراضية
-    lng: 'ar', // تعيين اللغة الافتراضية كالعربية
+    fallbackLng: 'ar',
+    lng: savedLanguage, // تعيين اللغة المحفوظة أو الافتراضية
     interpolation: {
-      escapeValue: false, // خاصية لتجنب الإشكاليات مع React
+      escapeValue: false,
     },
   });
 

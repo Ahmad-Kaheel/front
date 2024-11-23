@@ -6,18 +6,26 @@ import CardDetail from './CardDetail';
 
 // Import payment images
 import gpay from '../assets/images-and-icons/pay/googlepay.png';
-import credit from '../assets/images-and-icons/pay/visa-master.png';
-import mada from '../assets/images-and-icons/pay/mada.png';
-import tamara from '../assets/images-and-icons/pay/tamara.png';
-import tabby from '../assets/images-and-icons/pay/pay8.png';
-import stc from '../assets/images-and-icons/pay/stc.png';
-import paypal from '../assets/images-and-icons/pay/paypal.png';
+import visa from '../assets/images-and-icons/pay/visa.svg';
+import master from '../assets/images-and-icons/pay/master.svg';
+import sadad from '../assets/images-and-icons/pay/sadad.svg';
+import ur from '../assets/images-and-icons/pay/urpay.svg';
+
+import mada from '../assets/images-and-icons/pay/mada.svg';
+import tamara from '../assets/images-and-icons/pay/tamara.svg';
+import tabby from '../assets/images-and-icons/pay/tabby.svg';
+import apple from '../assets/images-and-icons/pay/itunes.svg';
+
+import stc from '../assets/images-and-icons/pay/stc.svg';
+import paypal from '../assets/images-and-icons/pay/paypal.svg';
 import buis from '../assets/images-and-icons/pay/Business.svg';
+
 import PaymentInfo from './PaymentInfo';
+import { CustomInput } from '../Utils/CustomInput';
 
 const Checkout = () => {
   const [value, setValue] = useState('');
-  const { t } = useTranslation('payment');
+  const { t ,i18n} = useTranslation('payment');
 
   const handleChange = (event) => setValue(event.target.value);
 
@@ -32,28 +40,63 @@ const Checkout = () => {
         <Typography>{t('label')}</Typography>
         <FormControl>
           <RadioGroup value={value} onChange={handleChange}>
-            <PaymentOption value="gpay" label="Google Pay" imgSrc={gpay} selectedValue={value} onChange={handleChange} />
-            <PaymentOption value="credit" label="بطاقة ائتمان" imgSrc={credit} selectedValue={value} onChange={handleChange} />
-            {value === 'credit' && <CardDetail />}
-            <PaymentOption value="mada" label="مدى/بطاقة الصراف" imgSrc={mada} selectedValue={value} onChange={handleChange} />
+            <PaymentOption value="paypal" label="Paypal" imgSrc={paypal} selectedValue={value} onChange={handleChange} />
+            <PaymentOption value="Apple" label="Apple pay" imgSrc={apple} selectedValue={value} onChange={handleChange} />
+            <PaymentOption value="visa" label="Visa Card" imgSrc={visa} selectedValue={value} onChange={handleChange} />
+            {value === 'visa' && <CardDetail />}
+            <PaymentOption value="master" label="Master Card" imgSrc={master} selectedValue={value} onChange={handleChange} />
+            {value === 'master' && <CardDetail />}
+            <PaymentOption value="tabby" label="Tabby" imgSrc={tabby} selectedValue={value} onChange={handleChange} />
+            <PaymentOption value="tamara" label="Tamara" imgSrc={stc} selectedValue={value} onChange={handleChange} />
+            <PaymentOption value="sadad" label="سداد" imgSrc={sadad} selectedValue={value} onChange={handleChange} />
+            <PaymentOption value="stc" label="STC pay" imgSrc={stc} selectedValue={value} onChange={handleChange} />
+            <PaymentOption value="urpay" label="Ur pay" imgSrc={ur} selectedValue={value} onChange={handleChange} />
+            <PaymentOption value="mada" label="مدى" imgSrc={mada} selectedValue={value} onChange={handleChange} />
             {value === 'mada' && <CardDetail />}
-            <PaymentOption value="tamara" label="تمارة" imgSrc={tamara} selectedValue={value} onChange={handleChange} />
-            <PaymentOption value="tabby" label="تابي" imgSrc={tabby} selectedValue={value} onChange={handleChange} />
-            <PaymentOption value="stc" label="STC" imgSrc={stc} selectedValue={value} onChange={handleChange} />
-            <PaymentOption value="paypal" label="PayPal" imgSrc={paypal} selectedValue={value} onChange={handleChange} />
+
+
           </RadioGroup>
         </FormControl>
       </Stack>
       <Stack spacing={2}>
-        <Typography>{t('note')}</Typography>
-        <TextField
-          id="note"
-          label={t('notLabel')}
-          multiline
-          rows={4}
-          variant="filled"
-          sx={{ bgcolor: 'white' }}
-        />
+      <TextField
+        InputLabelProps={{
+            className: i18n.language==="ar" ? 'custom-label-rtl' : ''
+        }}
+            sx={{
+            textAlign:'right',
+            width:"100%",
+            height: "42px",
+            '& .MuiOutlinedInput-root': {
+                borderRadius: "12px",
+                borderWidth: "2px",
+                
+                '& fieldset': {
+                borderColor: "rgba(0, 0, 0, 0.23)", 
+                },
+                '&:hover fieldset': {
+                borderColor: "gray", 
+                },
+                '&.Mui-focused fieldset': {
+                borderColor: "gray", 
+                },
+            },
+            '& .MuiInputLabel-root': {
+                color: 'gray',
+            },
+            '& .MuiInputLabel-root.Mui-focused': {
+                color: 'gray', // لون النص عند صعوده للأعلى عند التركيز
+            },
+            }}
+            id="outlined-basic"
+            label={t("notLabel")}
+            type={"text"}
+            variant="outlined"
+            multiline
+            rows={4}
+    />
+        
+
       </Stack>
     
 

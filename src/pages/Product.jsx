@@ -13,16 +13,16 @@ import car from "../assets/images-and-icons/nav1/car.svg"
 import pro from "../assets/images-and-icons/nav1/product.svg"
 
 
-import p1 from "../assets/images-and-icons/pay/pay1.svg"
-import p2 from "../assets/images-and-icons/pay/pay2.svg"
-import p3 from "../assets/images-and-icons/pay/pay3.svg"
-import p4 from "../assets/images-and-icons/pay/pay4.svg"
-import p5 from "../assets/images-and-icons/pay/pay5.svg"
-import p6 from "../assets/images-and-icons/pay/pay6.svg"
-import p7 from "../assets/images-and-icons/pay/pay7.svg"
-import p8 from "../assets/images-and-icons/pay/pay8.png"
-import p9 from "../assets/images-and-icons/pay/pay9.svg"
-import p10 from "../assets/images-and-icons/pay/pay10.svg"
+import p1 from "../assets/images-and-icons/pay/urpay.svg"
+import p2 from "../assets/images-and-icons/pay/master.svg"
+import p3 from "../assets/images-and-icons/pay/itunes.svg"
+import p4 from "../assets/images-and-icons/pay/visa.svg"
+import p5 from "../assets/images-and-icons/pay/paypal.svg"
+import p6 from "../assets/images-and-icons/pay/sadad.svg"
+import p7 from "../assets/images-and-icons/pay/tamara.svg"
+import p8 from "../assets/images-and-icons/pay/stc.png"
+import p9 from "../assets/images-and-icons/pay/tabby.svg"
+import p10 from "../assets/images-and-icons/pay/mada.svg"
 
 import { SingleProduct } from '../Utils/SingleProduct';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
@@ -30,6 +30,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import FullscreenExitIcon from '@mui/icons-material/FullscreenExit';
 import FullScreenImage from '../Component/FullScreenImage';
 import { useTranslation } from 'react-i18next';
+import { Helmet } from 'react-helmet-async';
 const Product = () => {
   const images = [img1, img2, img3, img4, img5];
   const { t, i18n } = useTranslation("product");
@@ -49,6 +50,17 @@ const Product = () => {
   };
   return (
     <Stack gap="64px" sx={{ paddingY: "64px", paddingX: { xs: "20px", sm: "32px", md: "128px", lg: "200px",xl:"256px" } }}>
+       <Helmet>
+        <title>لحم المى - متجر اللحوم الطازجة</title>
+        <meta name="description" content="لحم المى - من أجود أنواع اللحوم الطازجة. اطلب الآن وتمتع بمذاق فريد من نوعه." />
+        <meta name="keywords" content="لحم, لحوم طازجة, لحم الماعز, منتجات اللحوم, الجودة العالية" />
+        <meta property="og:title" content="لحم المى - متجر اللحوم الطازجة" />
+        <meta property="og:description" content="لحم المى - من أجود أنواع اللحوم الطازجة. اطلب الآن وتمتع بمذاق فريد من نوعه." />
+        <meta property="og:image" content={img1} />
+        <meta property="og:type" content="product" />
+        <meta property="og:url" content="https://example.com/product" />
+        <link rel="canonical" href="https://example.com/product" />
+      </Helmet>
       <Breadcrumbs aria-label="breadcrumb">
         <Link underline="hover" color="inherit" href="/">{t("link1")}</Link>
         <Link underline="hover" color="inherit" href="/m">{t("link2")}</Link>
@@ -175,22 +187,22 @@ const Product = () => {
             </Stack>
 
           </Stack>
-          <Stack direction={"row"} alignItems={"center"} gap={"32px"} sx={{ border: 1, borderWidth: "2px", borderColor: "colors.gray0", borderRadius: "16px" }} padding={"22px"}>
-            <Typography> {t("payment")}</Typography>
+          <Stack direction={"row"} alignItems={"center"} justifyContent={"center"} gap={"32px"} sx={{ border: 1, borderWidth: "2px", borderColor: "colors.gray0", borderRadius: "16px" }} padding={"22px"}>
+            <Typography fontSize={"18px"} fontWeight={400}> {t("payment")}</Typography>
             <Stack gap="8px">
               <Stack flexDirection={"row"} gap={"8px"}>
-                <Box component={"img"} src={p1} />
-                <Box component={"img"} src={p2} />
-                <Box component={"img"} src={p3} />
-                <Box component={"img"} src={p4} />
-                <Box component={"img"} src={p5} />
+                <Box component={"img"} src={p1} sx={{width:"38px",height:"28px"}}/>
+                <Box component={"img"} src={p2} sx={{width:"38px",height:"28px"}}/>
+                <Box component={"img"} src={p3} sx={{width:"38px",height:"28px"}}/>
+                <Box component={"img"} src={p4} sx={{width:"38px",height:"28px"}}/>
+                <Box component={"img"} src={p5} sx={{width:"38px",height:"28px"}}/>
               </Stack>
               <Stack flexDirection={"row"} gap={"8px"}>
-                <Box component={"img"} src={p6} />
-                <Box component={"img"} src={p7} />
-                <Box component={"img"} src={p8} />
-                <Box component={"img"} src={p9} />
-                <Box component={"img"} src={p10} />
+                <Box component={"img"} src={p6} sx={{width:"38px",height:"28px"}}/>
+                <Box component={"img"} src={p7} sx={{width:"38px",height:"28px"}}/>
+                <Box component={"img"} src={p8} sx={{width:"38px",height:"28px"}}/>
+                <Box component={"img"} src={p9} sx={{width:"38px",height:"28px"}}/>
+                <Box component={"img"} src={p10} sx={{width:"38px",height:"28px"}}/>
               </Stack>
             </Stack>
           </Stack>
