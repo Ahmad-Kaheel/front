@@ -35,7 +35,7 @@ const Hero = () => {
   };
 
   return (
-    <Box sx={{ paddingY: { xs: "32px", sm: "48px", md: "64px" }, paddingX: { xs: "28px", sm: "32px", md: "128px",lg:"200px",xl:"256px"} }}>
+    <Box sx={{ paddingY: { xs: "32px", sm: "48px", md: "64px" }, paddingX: { xs: "28px", sm: "32px", md: "128px",lg:"200px",xl:"20%"} }}>
       <Box sx={{position:"relative"}}>
       <Swiper
     

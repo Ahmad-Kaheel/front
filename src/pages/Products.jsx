@@ -75,18 +75,16 @@ const Products = () => {
       <meta name="twitter:description" content="اكتشف مجموعة واسعة من المنتجات مثل اللحوم، الدجاج، الخضار والفواكه، والتوابل. تسوق الآن بأفضل الأسعار!" />
       <meta name="twitter:image" content="رابط_الصورة_المميزة" />
     </Helmet>
-         <Stack gap={{ xs: "32px", md: "64px" }} sx={{ paddingX: { xs: "28px", sm: "32px", md: "128px",lg:"200px", xl: "256px" }, paddingY: "64px" }}>
+         <Stack gap={{ xs: "32px", md: "64px" }} sx={{ paddingX: { xs: "28px", sm: "32px", md: "128px",lg:"200px", xl:"20%" }, paddingY: "64px" }}>
       <Breadcrumbs aria-label="breadcrumb">
         <Link underline="hover" color="inherit" href="/">{t("link1")}</Link>
         <Link underline="hover" color="inherit" > {t("all")}</Link>
       </Breadcrumbs>
 
-
-
       <Stack direction="row" gap="16px" flexWrap="wrap" justifyContent="center">
         {categories.map((cat, index) => (
           <Stack key={index} direction="row" alignItems="center" sx={{ padding: "16px", borderRadius: "16px", bgcolor: "white", boxShadow: "0px 2px 25px 1px #28282814" }} gap="16px">
-            <Box component="img" src={cat.img} sx={{ width: "48px", height: "48px" }} />
+            <Box component="img" src={cat.img} sx={{ width: "48px", height: "48px",objectFit:'cover' }} />
             <Typography>{cat.name}</Typography>
           </Stack>
         ))}
@@ -146,7 +144,7 @@ const Products = () => {
                 "&:hover .add-to-cart-btn, &:hover .favorite-icon": { display: "flex" },
                 position: "relative"
               }}>
-              <Box component="img" src={product.img} sx={{ height: "auto", maxHeight: "256px", borderRadius: "16px", width: "100%" }} />
+              <Box component="img" src={product.img} sx={{ height: "auto", maxHeight: "256px",objectFit:"cover", borderRadius: "16px", width: "100%" }} />
               <Stack direction={"row"} alignItems={"center"} >
                 <Stack className="product-details" width={"100%"} >
                 <Rating name="read-only" value={4} readOnly />

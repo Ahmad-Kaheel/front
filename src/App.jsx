@@ -25,12 +25,28 @@ import DeleveryInfo from './Component/DeleveryInfo';
 import Checkout from './Component/Checkout';
 import PaymentInfo from './Component/PaymentInfo';
 import Welcome from './pages/Welcome';
+import { useDispatch } from 'react-redux';
+import { setUser } from './state/slices/UserSlice';
 function App() {
   const { t, i18n } = useTranslation();
-
+  const dispatch = useDispatch();
   useEffect(() => {
     document.documentElement.dir = localStorage.getItem("language") === 'ar' ? 'rtl' : 'ltr';
   }, [i18n.language]);
+  useEffect(() => {
+    // تحقق من وجود بيانات في Local Storage أو Session Storage
+    const storedUser = localStorage.getItem('user') || sessionStorage.getItem('user');
+    if (storedUser) {
+      const user = JSON.parse(storedUser);
+
+      // تحديث Redux بالحالة المحفوظة
+      dispatch(setUser({
+        userInfo: user.userInfo,
+        access_token: user.accessToken,
+        refresh_token: user.refreshToken,
+      }));
+    }
+  }, [dispatch]);
 
   return (
    <HelmetProvider>

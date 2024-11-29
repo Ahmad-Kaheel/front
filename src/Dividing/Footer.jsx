@@ -42,7 +42,7 @@ const Footer = () => {
     };
 
   return (
-    <Stack sx={{bgcolor:"colors.black0", paddingTop: { xs: "32px", sm: "48px", md: "64px" }, paddingX: { xs: "28px", sm: "32px", md: "128px",lg:"200px" ,xl:"256px"} }}>
+    <Stack sx={{bgcolor:"colors.black0", paddingTop: { xs: "32px", sm: "48px", md: "64px" }, paddingX: { xs: "28px", sm: "32px", md: "128px",lg:"200px" ,xl:"20%"} }}>
         <Stack flexDirection={{xs:"column",md:"row"}} gap={"20px"} justifyContent={{xs:"center",md:"space-between"}} alignItems={{xs:"center",md:"flex-end"}} sx={{borderBottom:1,paddingY:"64px",borderWidth:"2px",borderColor:"colors.white0"}}>
             <Stack gap={"63px"}>
                 <Box component="img" src={logo} sx={{width:"94px",height:"100px"}}/>

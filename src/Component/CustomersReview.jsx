@@ -45,7 +45,7 @@ const CustomerReview = () => {
       swiperRef.current.swiper.slidePrev();
     };
   return (
-    <Stack gap={{ xs: "32px", sm: "48px", md: "65px" }}  sx={{ paddingY: { xs: "32px", sm: "48px", md: "64px" }, paddingX: { xs: "28px", sm: "32px", md: "128px",lg:"200px",xl:"256px" } }}>
+    <Stack gap={{ xs: "32px", sm: "48px", md: "65px" }}  sx={{ paddingY: { xs: "32px", sm: "48px", md: "64px" }, paddingX: { xs: "28px", sm: "32px", md: "128px",lg:"200px",xl:"20%" } }}>
             <HeadSection name={t('name')} more={t('more')} />
             <Box sx={{ position: "relative" }}>
             <Swiper

@@ -4,12 +4,11 @@ import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import { useTranslation } from 'react-i18next';
 
-export default function PhoneNumberInput() {
+export default function PhoneNumberInput({ selectedCountry, setSelectedCountry,onBlur,required,error,helperText }) {
+    
     const { t, i18n } = useTranslation("nav2");
 
     // تحديد الدولة الافتراضية (السعودية)
-    const defaultCountry = countries.find(country => country.code === 'SA');
-    const [selectedCountry, setSelectedCountry] = React.useState(defaultCountry);
 
     const handleCountryChange = (event, newValue) => {
         setSelectedCountry(newValue);
@@ -49,7 +48,10 @@ export default function PhoneNumberInput() {
                     {...params}
                     InputLabelProps={{
                         className: i18n.language === "ar" ? 'custom-label-rtl' : ''
-                    }}
+                    }}onBlur={onBlur}
+                    required={required}
+                    error={error} // تحديد الخطأ بناءً على حالة "error"
+                    helperText={helperText} //
                     sx={{
                         textAlign: 'right',
                         width: "100%",

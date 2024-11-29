@@ -45,7 +45,7 @@ const Nav2 = () => {
         justifyContent={"space-between"}
         alignItems={"center"}
         sx={{
-          paddingX: { xs: "28px", sm: "32px", md: "128px",lg:"200px", xl: "256px" },
+          paddingX: { xs: "28px", sm: "32px", md: "128px",lg:"200px", xl:"20%" },
           paddingY: "10px",
           flexWrap: { xs: "wrap", md: "nowrap" },
         }}

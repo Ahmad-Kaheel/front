@@ -25,7 +25,7 @@ const DiscoverNow = () => {
     const { t, i18n } = useTranslation("discover")
 
     return (
-        <Stack gap={{ xs: "32px" }} sx={{ paddingY: { xs: "32px", sm: "48px", md: "64px" }, paddingX: { xs: "28px", sm: "32px", md: "128px",lg:"200px",xl:"256px" } }}>
+        <Stack gap={{ xs: "32px" }} sx={{ paddingY: { xs: "32px", sm: "48px", md: "64px" }, paddingX: { xs: "28px", sm: "32px", md: "128px",lg:"200px",xl:"20%" } }}>
             <Typography fontWeight={700} fontSize={{ xs: "17px", sm: "22px", md: "30px" }}>{t("discover")}</Typography>
             <Stack 
                 direction={{ xs: "column", sm: "row" }} 
@@ -45,7 +45,7 @@ const DiscoverNow = () => {
                                 position: "relative" 
                             }}
                         >
-                            <Box component={"img"} src={offer.img} sx={{ width: "100%", height: "100%" }} />
+                            <Box component={"img"} src={offer.img} sx={{ width: "100%",objectFit:"cover", height: "100%" }} />
                             <Typography 
                                 sx={{ 
                                     position: "absolute", 

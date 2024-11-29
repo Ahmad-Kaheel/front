@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import languageReducer from './slices/LanguageSlice';
+import userReducer from './slices/UserSlice';
 
 const store = configureStore({
-    reducer: {
-        language: languageReducer,
-    },
+  reducer: {
+    user: userReducer, // تأكد من أن المفتاح "user" متطابق مع الاستخدام في الكود
+  },
 });
 
 export default store;

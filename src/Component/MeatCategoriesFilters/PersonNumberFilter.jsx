@@ -24,7 +24,7 @@ const PersonNumberFilter = () => {
       gap="30px"
       sx={{
         paddingY: { xs: "32px", sm: "48px", md: "64px" },
-        paddingX: { xs: "28px", sm: "32px", md: "128px", lg: "256px" },
+        paddingX: { xs: "28px", sm: "32px", md: "128px", lg: "200px",xl:"20%" },
       }}
     >
       <HeadSection name={t("name")} more={t("more")} />
@@ -47,7 +47,7 @@ const PersonNumberFilter = () => {
             sx={{
               cursor: "pointer",
               textAlign: "center",
-              width: { xs: "80px", sm: "100px", md: "120px" }, // Width for each item
+              width: { xs: "80px", sm: "100px", md: "120px",xl:"265px" }, // Width for each item
             }}
           >
             {/* Icon */}
@@ -56,8 +56,8 @@ const PersonNumberFilter = () => {
               src={person.image}
               alt={person.name}
               sx={{
-                width: index === 0 ? { xs: "20px", sm: "25px", md: "30px" }:index===4? { xs: "45px", sm: "55px", md: "65px" }: { xs: "40px", sm: "50px", md: "60px" }, // Smaller size for the first icon
-                height: index === 0 ? { xs: "30px", sm: "40px", md: "55px" } :index===4? { xs: "45px", sm: "55px", md: "65px" }: { xs: "40px", sm: "50px", md: "60px" },
+                width: index === 0 ? { xs: "20px", sm: "25px", md: "30px",xl:"40px" }:index===4? { xs: "45px", sm: "55px", md: "65px",xl:"80px" }: { xs: "40px", sm: "50px", md: "60px",xl:'75px' }, // Smaller size for the first icon
+                height: index === 0 ? { xs: "30px", sm: "40px", md: "55px",xl:"70px" } :index===4? { xs: "45px", sm: "55px", md: "65px",xl:"80px" }: { xs: "40px", sm: "50px", md: "60px",xl:'75px' },
                 objectFit: "contain",
               }}
             />

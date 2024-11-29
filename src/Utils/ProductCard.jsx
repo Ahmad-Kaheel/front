@@ -88,7 +88,6 @@ const ProductCard = ({
           sx={{
             bgcolor:"colors.red0",
             width: "100%",
-            maxWidth: "300px",
             borderRadius: "8px",
             fontWeight: 600,
             fontSize: "16px",

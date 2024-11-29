@@ -43,7 +43,7 @@ const DiscountedProducts = () => {
     };
 
     return (
-        <Stack gap={{ xs: "32px" }}  sx={{ paddingY: { xs: "32px", sm: "48px", md: "64px" }, paddingX: { xs: "28px", sm: "32px", md: "128px",lg:"200px",xl:"256px" } }}>
+        <Stack gap={{ xs: "32px" }}  sx={{ paddingY: { xs: "32px", sm: "48px", md: "64px" }, paddingX: { xs: "28px", sm: "32px", md: "128px",lg:"200px",xl:"20%" } }}>
             <Stack flexDirection={"row"} justifyContent={"space-between"} alignItems={"center"}>
                 <Typography fontWeight={700} sx={{ fontSize: { xs: "20px", sm: "30px", md: "36px" } }} color={"colors.black0"}>
                     {t('name')}
@@ -68,7 +68,8 @@ const DiscountedProducts = () => {
                                     width: "100%",
                                     height: "400px",
                                     borderRadius: "16px",
-                                    position:"relative"
+                                    position:"relative",
+                                    objectFit:'cover'
                                 }}
                                 alt={`Slide ${index + 1}`}
                                 src={slide.img}

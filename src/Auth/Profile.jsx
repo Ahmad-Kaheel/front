@@ -6,13 +6,14 @@ import ProfileAdress from './ProfileAdress';
 import ProfileOrder from './ProfileOrder';
 import Favorite from './Favorite';
 import { useTranslation } from 'react-i18next';
-
+import { useSelector } from 'react-redux';
 const Profile = () => {
+    const user = useSelector((state) => state.user.userInfo); // تأكد من اسم المسمى الصحيح
+    console.log(user)
     const { t } = useTranslation("profile");
     const isMobile = useMediaQuery((theme) => theme.breakpoints.down('md'));
     const navigate = useNavigate();
     const location = useLocation();
-
     // استخراج المسار الحالي
     const currentPath = location.pathname;
 

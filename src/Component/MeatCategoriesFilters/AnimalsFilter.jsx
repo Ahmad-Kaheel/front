@@ -37,7 +37,7 @@ const AnimalsFilter = () => {
         {name:"حبش",img:habash},
     ]
   return (
-    <Stack gap={"32px"} sx={{ paddingY: { xs: "32px", sm: "48px", md: "64px" }, paddingX: { xs: "28px", sm: "32px", md: "128px",lg:"200px",xl:"256px" } }}>
+    <Stack gap={"32px"} sx={{ paddingY: { xs: "32px", sm: "48px", md: "64px" }, paddingX: { xs: "28px", sm: "32px", md: "128px",lg:"200px",xl:"20%" } }}>
        <HeadSection name={t('name')} more={t('more')} />
         <Box sx={{position:"relative"}}>
       <Swiper
@@ -54,8 +54,8 @@ const AnimalsFilter = () => {
         {data.map((slide, index) => (
           <SwiperSlide key={index} style={{position:"relative"}}>
             <Stack gap={"32px"} alignItems={"center"}>
-                <Box  component={"img"} src={slide.img} sx={{ width: { xs: "18px", sm: "20px", md: "30px", lg: "60px" }}}/>
-                <Typography>{slide.name}</Typography>
+                <Box  component={"img"} src={slide.img} sx={{ width: { xs: "18px", sm: "20px", md: "30px", lg: "60px",xl:"100px" }}}/>
+                <Typography sx={{ fontSize: { xs: "12px", sm: "14px", md: "16px",xl:'25px' } }}>{slide.name}</Typography>
             </Stack>
           </SwiperSlide>
         ))}

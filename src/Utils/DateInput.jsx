@@ -2,30 +2,45 @@ import React from 'react';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import dayjs from 'dayjs'; // تأكد من تثبيت مكتبة dayjs
 
-export const DateInput = ({ language, label }) => {
-  const isRTL = language === "ar"; // تحديد إذا كانت اللغة RTL
+export const DateInput = ({ language, label, onChange, required, error, helperText ,onBlur}) => {
+  const isRTL = language === "ar";
+
+  const handleDateChange = (value) => {
+    if (value) {
+      // تحويل التاريخ إلى التنسيق المطلوب YYYY-MM-DD
+      const formattedDate = dayjs(value).format('YYYY-MM-DD');
+      onChange(formattedDate);
+    } else {
+      onChange(''); // إذا لم يتم اختيار تاريخ
+    }
+  };
+
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <DatePicker
         label={label}
-       InputLabelProps={{
-        className: language==="ar" ? 'custom-label-rtl' : ''
-       }}
+        onError={error}
+        required={required}
+        onChange={handleDateChange} // استخدم الدالة المعدلة
+        onBlur={onBlur}
+        
         slotProps={{
-            desktopPaper: {
-              dir: 'ltr',
-            },
-            mobilePaper: {
-              dir: 'ltr',
-            },
-        
-          }}
-          
-        
+          desktopPaper: {
+            dir: 'ltr',
+          },
+          mobilePaper: {
+            dir: 'ltr',
+          },
+          textField: {
+            helperText: helperText || '',
+            error: !!error, // عرض الخطأ إذا كان موجودًا
+          },
+        }}
         sx={{
-          direction: isRTL ? "rtl" : "ltr", // اتجاه الحقل نفسه
+          direction: isRTL ? "rtl" : "ltr",
           '& .MuiOutlinedInput-root': {
             borderRadius: "12px",
             '& fieldset': {
@@ -42,17 +57,16 @@ export const DateInput = ({ language, label }) => {
             color: 'gray',
             right: isRTL ? "2rem" : "inherit",
             left: isRTL ? "inherit" : "0",
-
-            transformOrigin:isRTL ? "right" :"left"
+            transformOrigin: isRTL ? "right" : "left",
           },
-          '& .MuiInputBase-root fieldset':{
-            textAlign:isRTL ? "right" :"left"
+          '& .MuiInputBase-root fieldset': {
+            textAlign: isRTL ? "right" : "left",
           },
           '& .MuiInputLabel-root.Mui-focused': {
             color: 'gray',
           },
           '& .MuiOutlinedInput-input': {
-            textAlign: isRTL ? "right" : "left", // محاذاة النص داخل الحقل
+            textAlign: isRTL ? "right" : "left",
           },
         }}
       />

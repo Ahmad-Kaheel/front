@@ -71,7 +71,7 @@ const Payment = () => {
                 <meta name="twitter:image" content="https://goldenmeatstore.com/assets/images/payment-banner.jpg" />
             </Helmet>
 
-            <Stack sx={{ paddingY: "128px", paddingX: { xs: "20px", sm: "32px", md: "128px", lg: "200px", xl: "256px" }, margin: "auto" }} gap={"128px"}>
+            <Stack sx={{ paddingY: "128px", paddingX: { xs: "20px", sm: "32px", md: "128px", lg: "200px", xl:"20%" }, margin: "auto" }} gap={"128px"}>
                 <Box sx={{ width: '100%' }}>
                 <Stepper activeStep={activeStep} alternativeLabel sx={{ direction: "ltr" }}>
                     {steps.map((label, index) => (
