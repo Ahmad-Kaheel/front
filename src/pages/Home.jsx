@@ -13,6 +13,7 @@ import CheifChoices from '../Component/MeatCategoriesFilters/ChefChoices';
 import CustomerReview from '../Component/CustomersReview';
 import Partners from '../Component/Partners';
 import { Helmet } from 'react-helmet-async';
+import OurCategories from '../Component/OurCategories';
 
 const Home = () => {
   const isMobile = useMediaQuery(theme => theme.breakpoints.down('sm'));
@@ -30,6 +31,7 @@ const Home = () => {
       </Helmet>
       <Box>
         {isMobile ? <MobileHero /> : <Hero />} {/* عرض MobileHero إذا كانت الشاشة صغيرة */}
+        <OurCategories/>
         <DiscoverNow />
         <OtherFilter />
         <MeatCountryFilter />

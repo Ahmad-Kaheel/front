@@ -4,11 +4,12 @@ import EditProfile from './EditProfile';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import ChangePassword from './ChangePassword';
-import axios from 'axios';
+import api from '../Api/Api';
 
 const ProfileData = () => {
   const userInfo = useSelector((state) => state.user.userInfo);
-  const token = useSelector((state) => state.user.userInfo.access_token);
+
+  console.log('Redux userInfo in ProfileData:', userInfo); // تأكد من أن البيانات تصل هنا
 
   const [edit, setEdit] = useState(false);
   const [changePassword, setChangePassword] = useState(false);
@@ -16,21 +17,18 @@ const ProfileData = () => {
   const [profileData, setProfileData] = useState(null); // تخزين البيانات
   const { t, i18n } = useTranslation("profileData");
 
-  useEffect(() => {
+   useEffect(() => {
+    console.log('Redux User Info:', userInfo);
     const fetchData = async () => {
       setLoading(true); // بدء التحميل
       try {
-        const response = await axios.get(
-          'http://206.81.22.164:8000//api/user/profile/',
+        const response = await api.get('api/user/profile/', 
           {
             headers: {
-              'Content-Type': 'application/json',
-              'Accept-Language': i18n.language,
-              'Authorization': `Bearer ${token}`, // إضافة رمز المصادقة
-              'X-CSRFTOKEN': 'ziRlVED0aW2ucADbDWZuQ0sQK8q2ZKWUgBANqRLQK9n41JNXjkLYBGgbVDqMULm4'
+                'accept': 'application/json',
+                'Accept-Language': i18n.language,
             },
-          }
-        );
+        });
         setProfileData(response.data); // تخزين البيانات في الحالة
         console.log('Response:', response.data);
       } catch (error) {
@@ -41,7 +39,7 @@ const ProfileData = () => {
     };
 
     fetchData();
-  }, [i18n.language]); // أضف التبعية إذا لزم الأمر
+  }, [i18n.language]);
 
   return (
     <>

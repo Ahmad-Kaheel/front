@@ -12,6 +12,8 @@ import x from "../assets/images-and-icons/social/X.svg"
 import youtube from "../assets/images-and-icons/social/Youtube.svg"
 import googlePlay from "../assets/images-and-icons/application/googlePlay.svg"
 import appleStore from "../assets/images-and-icons/application/AppStore.svg"
+import qr from "../assets/images-and-icons/application/Qr.svg"
+
 import logo from "../assets/images-and-icons/nav2/logo.png"
 import p1 from "../assets/images-and-icons/pay/pay1.svg"
 import p2 from "../assets/images-and-icons/pay/pay2.svg"
@@ -64,15 +66,19 @@ const Footer = () => {
                 </Stack>
                 <Stack gap={"32px"}>
                     <Typography  fontWeight={400} fontSize={"16px"} color='colors.white0'>{t("download")}</Typography>
-                    <Stack gap={"32px"} flexDirection={"row"}>
-                        <Stack gap={"8px"} flexDirection={"row"} sx={{width:"fit-content",padding:"8px 16px",cursor:"pointer", border:1,borderstyle:"solid",borderWidth:"1px",borderRadius:"4px",borderColor:"colors.white0"}}>
-                            <Typography  fontWeight={400} fontSize={"16px"} color='colors.white0'>App store</Typography>
-                            <Box component="img" src={appleStore} />
-                        </Stack>
-                        <Stack gap={"8px"} flexDirection={"row"} sx={{width:"fit-content",padding:"8px 16px",cursor:"pointer", border:1,borderstyle:"solid",borderWidth:"1px",borderRadius:"4px",borderColor:"colors.white0"}}>
+                    <Stack direction={"row"} alignItems={"center"} gap={"24px"}>
+                        <Box component={"img"} src={qr}/>
 
-                        <Typography  fontWeight={400} fontSize={"16px"} color='colors.white0'>Google play</Typography>
-                            <Box component="img" src={googlePlay} />
+                        <Stack gap={"32px"} flexDirection={"column"}>
+                            <Stack gap={"8px"} flexDirection={"row"} sx={{padding:"8px 16px",cursor:"pointer", border:1,borderstyle:"solid",borderWidth:"1px",borderRadius:"4px",borderColor:"colors.white0"}}>
+                                <Typography  fontWeight={400} fontSize={"16px"} color='colors.white0'>App store</Typography>
+                                <Box component="img" src={appleStore} />
+                            </Stack>
+                            <Stack gap={"8px"} flexDirection={"row"} sx={{padding:"8px 16px",cursor:"pointer", border:1,borderstyle:"solid",borderWidth:"1px",borderRadius:"4px",borderColor:"colors.white0"}}>
+
+                            <Typography  fontWeight={400} fontSize={"16px"} color='colors.white0'>Google play</Typography>
+                                <Box component="img" src={googlePlay} />
+                            </Stack>
                         </Stack>
                     </Stack>
                 </Stack>

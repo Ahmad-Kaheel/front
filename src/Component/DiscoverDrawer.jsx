@@ -29,7 +29,6 @@ export default function DiscoverDrawer({ openDrawer, setOpenDrawer }) {
         { img1: slide2,img2:slide3 },
         { img1: slide1,img2:slide2 },
         { img1: slide1,img2:slide3 },
-
       ];
       const handleNext = () => {
         swiperRef.current.swiper.slideNext();
@@ -43,6 +42,7 @@ export default function DiscoverDrawer({ openDrawer, setOpenDrawer }) {
         <Drawer 
         open={openDrawer} 
         onClose={()=>setOpenDrawer(false)} 
+        anchor={i18n.language==="ar"?"right":"left"}
         >
           <Stack sx={{width:"640px", paddingX:"32px", paddingBottom:"32px",bgcolor:"colors.white10"}} gap={"64px"}>
             {/* محتويات السلة */}

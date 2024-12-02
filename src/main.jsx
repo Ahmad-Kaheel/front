@@ -62,7 +62,7 @@ import enWelcome from "./locales/en/welcome.json"
 import arCheckout from "./locales/ar/checkout.json"
 import enCheckout from "./locales/en/checkout.json"
 
-import store from './state/Store';
+import store from './state/store';
 import { Provider } from 'react-redux';
 const savedLanguage = localStorage.getItem('language') || 'ar';
 

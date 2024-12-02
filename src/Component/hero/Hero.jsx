@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Scrollbar } from 'swiper/modules';
+import { Autoplay, Scrollbar } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -18,12 +18,10 @@ const Hero = () => {
   const swiperRef = useRef(null); // مرجع للسلايدر
   const slides = [
     { img: slide0 },
-
     { img: slide2 },
     { img: slide1 },
     { img: slide3 }
   ];
-
   // وظيفة الانتقال للشريحة التالية
   const handleNext = () => {
     swiperRef.current.swiper.slideNext();
@@ -41,10 +39,11 @@ const Hero = () => {
     
         ref={swiperRef} // استخدام المرجع
         dir='rtl'
+        modules={[Autoplay, Scrollbar]}
+        autoplay={{ delay: 1000, disableOnInteraction: false }}
         slidesPerView={1}
         onSlideChange={(swiper) => console.log('Slide index changed to:', swiper.activeIndex)} 
         scrollbar={{ draggable: true }} // إضافة شريط تمرير يمكن سحبه
-        modules={[Scrollbar]} 
         style={{ paddingBottom: '20px' }}
       >
         {slides.map((slide, index) => (
@@ -108,7 +107,6 @@ const Hero = () => {
         <img src={right} alt="Previous" />
       </Box>
       </Box>
-    
     </Box>
   );
 };

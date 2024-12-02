@@ -62,40 +62,19 @@ const handleCheckboxChange = (event) => {
   // دالة تسجيل الدخول
   const handleLogin = async () => {
     if (!validateFields()) return;
-  
+
     setLoading(true);
     try {
-      const response = await authApi.post('api/login/', formData,{
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept-Language': i18n.language,
-        },
-    })
-  
+      const response = await authApi.post('api/login/', formData, {
+        headers: { 'Content-Type': 'application/json', 'Accept-Language': i18n.language },
+      });
+
       const userInfo = response.data;
-      console.log('Login Successful:', userInfo);
-  
-      // تخزين البيانات في Redux
-      dispatch(
-        setUser({
-          userInfo,
-          access_token: userInfo.access_token,
-          refresh_token: userInfo.refresh_token,
-        })
-      );
-  
-      // تخزين التوكن في الكوكيز
+      dispatch(setUser(userInfo)); // قم بإرسال البيانات الكاملة مباشرة إلى Redux
       document.cookie = `refresh_token=${userInfo.refresh_token}; Path=/`;
       document.cookie = `access_token=${userInfo.access_token}; Path=/`;
-
-      console.log(userInfo.refresh_token);
-      console.log(document.cookie);
-
-      // توجيه المستخدم إلى الصفحة الرئيسية
       navigate('/');
     } catch (error) {
-      console.error('Login Failed:', error.response?.data || error.message);
-  
       setSnackbarMessage(error.response?.data?.detail || t("login_failed"));
       setSnackbarSeverity('error');
       setSnackbarOpen(true);
@@ -103,7 +82,7 @@ const handleCheckboxChange = (event) => {
       setLoading(false);
     }
   };
-  
+
 
   const handleSnackbarClose = () => {
     setSnackbarOpen(false);

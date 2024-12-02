@@ -8,6 +8,7 @@ import Uruguay from "../../assets/images-and-icons/flags/Uruguay.svg";
 import { useTranslation } from 'react-i18next';
 import HeadSection from '../../Utils/HeadSection';
 import axios from 'axios';
+import api from '../../Api/Api';
 
 const MeatCountryFilter = () => {
     const { t, i18n } = useTranslation('country');
@@ -25,13 +26,11 @@ const MeatCountryFilter = () => {
         const fetchData = async () => {
           setLoading(true); // بدء التحميل
           try {
-            const response = await axios.get(
-                'http://209.38.247.212:8000/api/catalogue/countries/',
+           const response = await api.get('api/catalogue/countries/', 
               {
                 headers: {
                   'Content-Type': 'application/json',
                   'Accept-Language': i18n.language,
-                  'X-CSRFTOKEN': 'ziRlVED0aW2ucADbDWZuQ0sQK8q2ZKWUgBANqRLQK9n41JNXjkLYBGgbVDqMULm4'
                 },
               }
             );

@@ -4,9 +4,6 @@ import store from '../state/store';
 
 const api = axios.create({
   baseURL: 'http://209.38.247.212:8000/',
-  headers: {
-    'Content-Type': 'application/json',
-  },
 });
 
 // Interceptor للتعامل مع الأخطاء

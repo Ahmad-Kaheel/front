@@ -60,7 +60,7 @@ const Nav2 = () => {
             onClick={() => setOpenDrawerDiscover(true)}
             aria-label={i18n.language === "ar" ? "قائمة المكونات" : "list menu"} // إضافة aria-label للعنصر
           >
-            <img src={menu} alt={i18n.language === "ar" ? "أيقزنة قائمة" : " menu icon"} style={{ width: "24px", height: "20px" }} />
+            <Box component={"img"} src={menu} alt={i18n.language === "ar" ? "أيقزنة قائمة" : " menu icon"} style={{ width: "24px", height: "20px" }} />
             <Typography sx={{ color: "text.titles", fontSize: { xs: "12px", md: "14px" } }}>
               {t('list')}
             </Typography>
