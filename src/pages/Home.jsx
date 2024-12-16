@@ -32,11 +32,11 @@ const Home = () => {
       <Box>
         {isMobile ? <MobileHero /> : <Hero />} {/* عرض MobileHero إذا كانت الشاشة صغيرة */}
         <OurCategories/>
+        <DiscountedProducts />
         <DiscoverNow />
         <OtherFilter />
         <MeatCountryFilter />
         <AnimalsFilter />
-        <DiscountedProducts />
         <PersonNumberFilter />
         <GroupProducts />
         <CheifChoices />

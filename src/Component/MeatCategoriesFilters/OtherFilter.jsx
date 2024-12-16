@@ -19,6 +19,7 @@ import { useTranslation } from 'react-i18next';
 import HeadSection from '../../Utils/HeadSection';
 import { useTheme } from '@emotion/react';
 import { Scrollbar } from 'swiper/modules';
+import ProductCard from '../../Utils/ProductCard';
 const OtherFilter = () => {
     const swiperRef = useRef(null); // مرجع للسلايدر
     const { t, i18n } = useTranslation('other');
@@ -26,7 +27,7 @@ const OtherFilter = () => {
     const isXs = useMediaQuery(theme.breakpoints.down('sm'));
     const isSm = useMediaQuery(theme.breakpoints.between('sm', 'md'));
     const isMd = useMediaQuery(theme.breakpoints.between('md', 'lg'));
-    const spaceBetween = isXs ? 20 : isSm ? 30 : 32
+    const spaceBetween = isXs ? 12 : isSm ? 14 : 16
     const slides = [
       { img: slide1,type:"لحم متبل" },
       { img: slide2,type:"لحم مبرد" },
@@ -52,10 +53,9 @@ const OtherFilter = () => {
         <HeadSection name={t('name')} more={t("more")} />
         <Box sx={{position:"relative"}}>
       <Swiper
-    
         ref={swiperRef} // استخدام المرجع
         dir='rtl'
-        slidesPerView={isXs ? 1 : isSm? 1.5 :isMd?2.5:3.3}
+        slidesPerView={isXs ? 2 : isSm? 2.5:isMd?3.3:4}
         initialSlide={0}
         spaceBetween={spaceBetween}
         modules={[Scrollbar]} 
@@ -65,17 +65,21 @@ const OtherFilter = () => {
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index} style={{position:"relative"}}>
-            <Box
+            {/* <Box
               component="img"
               sx={{
-                width: "100%",
-                height: "400px",
-                borderRadius: "16px",
+                maxWidth: "272px",
+                height: "272px",
+                borderRadius: "32px",
               }}
               alt={`Slide ${index + 1}`}
               src={slide.img}
             />
-            <Typography sx={{position:"absolute",color:"colors.white0",bottom:"20px",left:"50%",fontWeight:700,fontSize:{xs:"15px",sm:"20px",md:"22px",lg:"25px"},transform:"translateX(-50%)"}}>{slide.type}</Typography>
+            <Stack sx={{position:"absolute",color:"colors.white0",bottom:"20px",left:0}}>
+              <Typography >{slide.type}</Typography>
+
+            </Stack> */}
+            <ProductCard image={slide.img} name={slide.type} />
           </SwiperSlide>
         ))}
       

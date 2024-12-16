@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { setUser, logout } from '../state/slices/UserSlice'; 
 import store from '../state/store'; 
+import Cookies from 'js-cookie';
 
 const api = axios.create({
   baseURL: 'http://209.38.247.212:8000/',
@@ -11,18 +12,20 @@ api.interceptors.response.use(
   (response) => response,
   async (error) => {
     const originalRequest = error.config;
-
+    console.log(error.response?.status);
     // تحقق إذا كانت الاستجابة 401
     if (error.response?.status === 401 && !originalRequest._retry) {
+  
         originalRequest._retry = true;
         try {
-          const refreshToken = store.getState().user.userInfo?.refresh_token;
+          const refreshToken = Cookies.get('refresh_token');
+
       
           if (refreshToken) {
             const response = await axios.post(`${api.defaults.baseURL}/token/refresh/`, {
               refresh: refreshToken,
             });
-      
+            console.log("kkkkk");
             // تحديث Access Token في Redux
             store.dispatch(
               setUser({
@@ -62,7 +65,7 @@ api.interceptors.response.use(
 
 // Interceptor لإضافة التوكن للطلبات
 api.interceptors.request.use((config) => {
-  const token = store.getState().user.userInfo?.access_token;
+  const token =  Cookies.get('access_token');
   if (token) {
     config.headers['Authorization'] = `Bearer ${token}`;
   }

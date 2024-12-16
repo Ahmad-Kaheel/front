@@ -49,14 +49,14 @@ const GroupProducts = () => {
             <HeadSection name={t('name')} more={t('more')} />
             <Box sx={{ position: "relative" }}>
                   <Swiper
-                     ref={swiperRef}
-                     dir="rtl"
-                     slidesPerView={isXs ? 1 : isSm? 1.5 :isMd?2.5:3}
-                     initialSlide={0}
-                     spaceBetween={spaceBetween} // Adjusted gap between slides
-                     modules={[Scrollbar]} 
-                     scrollbar={{ draggable: true }}
-                     style={{paddingBottom:"20px"}}
+                      ref={swiperRef}
+                      dir="rtl"
+                      slidesPerView={isXs ? 2 : isSm? 2.5:isMd?3.3:4}
+                      initialSlide={0}
+                      spaceBetween={spaceBetween} // Adjusted gap between slides
+                      modules={[Scrollbar]} 
+                      scrollbar={{ draggable: true }}
+                      style={{paddingBottom:"20px"}}
                   >
                     {slides.map((slide, index) => (
                         <SwiperSlide key={index} style={{ position: "relative" }}>

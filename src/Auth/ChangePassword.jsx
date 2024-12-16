@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 
 const ChangePassword = ({ open, onClose }) => {
   const { t, i18n } = useTranslation("profileData");
-  const token = useSelector((state) => state.user.userInfo.access_token);
+  const token = useSelector((state) => state.user.userInfo?.access_token);
 
   // حالة لتخزين قيم الحقول
   const [passwords, setPasswords] = useState({

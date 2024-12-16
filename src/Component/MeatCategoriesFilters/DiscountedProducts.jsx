@@ -14,6 +14,7 @@ import left from "../../assets/images-and-icons/hero/left.svg";
 import right from "../../assets/images-and-icons/hero/right.svg";
 import { useTranslation } from 'react-i18next';
 import { Scrollbar } from 'swiper/modules';
+import ProductCard from '../../Utils/ProductCard';
 
 const DiscountedProducts = () => {
     const swiperRef = useRef(null);
@@ -22,15 +23,15 @@ const DiscountedProducts = () => {
     const isXs = useMediaQuery(theme.breakpoints.down('sm'));
     const isSm = useMediaQuery(theme.breakpoints.between('sm', 'md'));
     const isMd = useMediaQuery(theme.breakpoints.between('md', 'lg'));
-    const spaceBetween = isXs ? 20 : isSm ? 30 :32
+    const spaceBetween = 20
 
    
     const slides = [
-      { img: slide2, oldPrice: "1233 ريال سعودي", newPrice: "1000 ريال سعودي" },
-      { img: slide1, oldPrice: "126 ريال سعودي", newPrice: "100 ريال سعودي" },
-      { img: slide3, oldPrice: "183 ريال سعودي", newPrice: "156 ريال سعودي" },
-      { img: slide1, oldPrice: "126 ريال سعودي", newPrice: "100 ريال سعودي" },
-      { img: slide2, oldPrice: "1233 ريال سعودي", newPrice: "1000 ريال سعودي" },
+      { name:"اسم المنتج",img: slide2, oldPrice: "1233 ريال سعودي", newPrice: "1000 ريال سعودي" },
+      { name:"اسم المنتج",img: slide1, oldPrice: "126 ريال سعودي", newPrice: "100 ريال سعودي" },
+      { name:"اسم المنتج",img: slide3, oldPrice: "183 ريال سعودي", newPrice: "156 ريال سعودي" },
+      {name:"اسم المنتج", img: slide1, oldPrice: "126 ريال سعودي", newPrice: "100 ريال سعودي" },
+      { name:"اسم المنتج",img: slide2, oldPrice: "1233 ريال سعودي", newPrice: "1000 ريال سعودي" },
 
     ];
 
@@ -53,7 +54,7 @@ const DiscountedProducts = () => {
                   <Swiper
                     ref={swiperRef}
                     dir="rtl"
-                    slidesPerView={isXs ? 1 : isSm? 1.5 : 3}
+                    slidesPerView={isXs ? 2 : isSm? 2.5:isMd?3.3:4}
                     initialSlide={0}
                     spaceBetween={spaceBetween} // Adjusted gap between slides
                     modules={[Scrollbar]} 
@@ -62,37 +63,7 @@ const DiscountedProducts = () => {
                   >
                     {slides.map((slide, index) => (
                         <SwiperSlide key={index} >
-                            <Box
-                                component="img"
-                                sx={{
-                                    width: "100%",
-                                    height: "400px",
-                                    borderRadius: "16px",
-                                    position:"relative",
-                                    objectFit:'cover'
-                                }}
-                                alt={`Slide ${index + 1}`}
-                                src={slide.img}
-                            />
-                            <Box
-                                sx={{
-                                    position: "absolute",
-                                    width: "100%",
-                                    height: "100%",
-                                    left: "0",
-                                    top: "0",
-                                    zIndex: 10,
-                                    borderRadius: "16px",
-                                    bgcolor: "rgba(0,0,0,0.4)"
-                                }}
-                            />
-                            <Stack sx={{ position: "absolute", color: "colors.white0", bottom: "40px", right: "20px", fontWeight: 700, zIndex: 11 }}>
-                                <Box sx={{ position: "relative" }}>
-                                    <Typography fontWeight={700} sx={{ fontSize: { xs: "11px", sm: "15px", md: "20px"} }}>{slide.oldPrice}</Typography>
-                                    <Box width={"86%"} height={"3px"} sx={{ bgcolor: "colors.red0", position: "absolute", right: "0", top: "50%" }} />
-                                </Box>
-                                <Typography fontWeight={700} sx={{ fontSize: { xs: "15px", sm: "20px", md: "24px"} }}>{slide.newPrice}</Typography>
-                            </Stack>
+                           <ProductCard name={slide.name} oldPrice={slide.oldPrice} newPrice={slide.newPrice} />
                         </SwiperSlide>
                     ))}
                 </Swiper>

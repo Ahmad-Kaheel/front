@@ -4,10 +4,13 @@ import cack from "../../assets/images-and-icons/CategoryFilters/animals/ckick.sv
 import cow from "../../assets/images-and-icons/CategoryFilters/animals/cow.svg"
 import cowe from "../../assets/images-and-icons/CategoryFilters/animals/cowe.svg"
 import habash from "../../assets/images-and-icons/CategoryFilters/animals/habash.svg"
+import sheep from "../../assets/images-and-icons/CategoryFilters/animals/sheep.svg"
+import fish from "../../assets/images-and-icons/CategoryFilters/animals/fish.svg"
+
 import left from "../../assets/images-and-icons/hero/left.svg"
 import right from "../../assets/images-and-icons/hero/right.svg"
 
-import { Box, Stack, Typography } from '@mui/material'
+import { Box, Stack, Typography, useMediaQuery, useTheme } from '@mui/material'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -32,10 +35,17 @@ const AnimalsFilter = () => {
     const data =[
         {name:"جمل",img:camel},
         {name:"دجاج",img:cack},
-        {name:"بقرة",img:cow},
+        {name:"بقر",img:cow},
         {name:"عجل",img:cowe},
-        {name:"حبش",img:habash},
+        {name:"غنم",img:sheep},
+        {name:"سمك",img:fish},
+
+        
     ]
+    const theme = useTheme();
+    const isXs = useMediaQuery(theme.breakpoints.down('sm'));
+    const isSm = useMediaQuery(theme.breakpoints.between('sm', 'md'));
+    const isMd = useMediaQuery(theme.breakpoints.between('md', 'lg'));
   return (
     <Stack gap={"32px"} sx={{ paddingY: { xs: "32px", sm: "48px", md: "64px" }, paddingX: { xs: "28px", sm: "32px", md: "128px",lg:"200px",xl:"20%" } }}>
        <HeadSection name={t('name')} more={t('more')} />
@@ -44,8 +54,7 @@ const AnimalsFilter = () => {
     
         ref={swiperRef} // استخدام المرجع
         dir='rtl'
-        slidesPerView={5}
-        initialSlide={1}
+        slidesPerView={isXs ? 2 : isSm? 3.5:isMd?4.5:6}
         spaceBetween={64}
         modules={[Scrollbar]} 
         scrollbar={{ draggable: true }}
@@ -54,7 +63,10 @@ const AnimalsFilter = () => {
         {data.map((slide, index) => (
           <SwiperSlide key={index} style={{position:"relative"}}>
             <Stack gap={"32px"} alignItems={"center"}>
-                <Box  component={"img"} src={slide.img} sx={{ width: { xs: "18px", sm: "20px", md: "30px", lg: "60px",xl:"100px" }}}/>
+                <Box sx={{width:"96px",height:"98px",display:"flex",justifyContent:"center",alignItems:"center",bgcolor:"colors.white10",borderRadius:"100%"}}>
+                  <Box  component={"img"} src={slide.img} sx={{ width: { xs: "48px", sm: "55px", md: "60px", lg: "60px",xl:"100px" }}}/>
+
+                </Box>
                 <Typography sx={{ fontSize: { xs: "12px", sm: "14px", md: "16px",xl:'25px' } }}>{slide.name}</Typography>
             </Stack>
           </SwiperSlide>

@@ -35,19 +35,29 @@ const OurCategories = () => {
   };
 
   return (
-    <Stack spacing={2} sx={{ paddingY: { xs: "32px", sm: "48px", md: "64px" }, paddingX: { xs: "28px", sm: "32px", md: "128px", lg: "200px", xl: "20%" } }}>
+    <Stack spacing={4} sx={{ paddingY: { xs: '32px', sm: '48px', md: '64px' }, paddingX: { xs: "28px", sm: "32px", md: "128px",lg:"200px",xl:"20%" } }}>
       <HeadSection name="أصنافنا" />
-      <Stack
+
+      <Box
         sx={{
           display: 'grid',
-          gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr', lg: '1fr 1fr 1fr 1fr' }, // أعمدة ديناميكية
-          gap: '32px', // المسافة بين السوايبرات
-          alignItems: 'center',
+          gridTemplateColumns: 'repeat(4, 1fr)', // أربعة أعمدة ثابتة
+          gap: { xs: '10px', sm: '15px', md: '20px' }, // استجابة لمسافات الشبكة
         }}
       >
         {data.map((cat, index) => (
-          <Stack key={index} alignItems="center">
-            <Box sx={{ position: 'relative', width: '100%', maxWidth: '300px' }}>
+          <Box
+            key={index}
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              textAlign: 'center',
+              width: '100%',
+              maxWidth: { xs: '80px', sm: '120px', md: '160px', lg: '200px' }, // عرض البطاقة مرن
+            }}
+          >
+            <Box sx={{ position: 'relative', width: '100%', maxWidth: '100%' }}>
               <Swiper
                 ref={swiperRef}
                 dir="rtl"
@@ -55,7 +65,7 @@ const OurCategories = () => {
                 autoplay={{ delay: 3000, disableOnInteraction: false }}
                 slidesPerView={1}
                 scrollbar={{ draggable: true }}
-                style={{ paddingBottom: '20px' }}
+                style={{ paddingBottom: '16px' }}
               >
                 {cat.images.map((slide, imgIndex) => (
                   <SwiperSlide key={imgIndex}>
@@ -63,8 +73,9 @@ const OurCategories = () => {
                       component="img"
                       sx={{
                         width: '100%',
-                        height: '300px',
-                        borderRadius: '16px',
+                        height: { xs: '80px', sm: '120px', md: '160px', lg: '200px' },
+                        borderRadius: '12px',
+                        objectFit: 'cover',
                       }}
                       src={slide}
                       alt={`Slide ${imgIndex}`}
@@ -81,19 +92,19 @@ const OurCategories = () => {
                   display: 'flex',
                   justifyContent: 'center',
                   alignItems: 'center',
-                  width: '40px',
-                  height: '40px',
-                  left: '10px',
+                  width: {xs:'20px',sm:"25",md:"30px"},
+                  height: {xs:'20px',sm:"25",md:"30px"},
+                  left: '-10px',
                   top: '50%',
                   transform: 'translateY(-50%)',
                   zIndex: 10,
                   cursor: 'pointer',
                   bgcolor: 'white',
                   borderRadius: '50%',
-                  boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
+                  boxShadow: '0 1px 3px rgba(0,0,0,0.2)',
                 }}
               >
-                <img src={left} alt="Next" />
+                <img src={left} alt="Next" style={{ width: '60%' }} />
               </Box>
 
               {/* السهم الأيمن */}
@@ -104,25 +115,25 @@ const OurCategories = () => {
                   display: 'flex',
                   justifyContent: 'center',
                   alignItems: 'center',
-                  width: '40px',
-                  height: '40px',
-                  right: '10px',
+                  width: {xs:'20px',sm:"25",md:"30px"},
+                  height: {xs:'20px',sm:"25",md:"30px"},
+                  right: '-10px',
                   top: '50%',
                   transform: 'translateY(-50%)',
                   zIndex: 10,
                   cursor: 'pointer',
                   bgcolor: 'white',
                   borderRadius: '50%',
-                  boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
+                  boxShadow: '0 1px 3px rgba(0,0,0,0.2)',
                 }}
               >
-                <img src={right} alt="Previous" />
+                <img src={right} alt="Previous" style={{ width: '60%' }} />
               </Box>
             </Box>
-            <Typography>{cat.title}</Typography>
-          </Stack>
+            <Typography sx={{ marginTop: '12px', fontSize: '14px', fontWeight: '500' }}>{cat.title}</Typography>
+          </Box>
         ))}
-      </Stack>
+      </Box>
     </Stack>
   );
 };

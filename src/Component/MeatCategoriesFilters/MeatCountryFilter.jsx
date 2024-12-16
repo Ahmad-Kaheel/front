@@ -5,6 +5,8 @@ import Brazil from "../../assets/images-and-icons/flags/Brazil.svg";
 import Ecuador from "../../assets/images-and-icons/flags/Ecuador.svg";
 import India from "../../assets/images-and-icons/flags/India.svg";
 import Uruguay from "../../assets/images-and-icons/flags/Uruguay.svg";
+import usa from "../../assets/images-and-icons/flags/usa.svg";
+
 import { useTranslation } from 'react-i18next';
 import HeadSection from '../../Utils/HeadSection';
 import axios from 'axios';
@@ -21,6 +23,8 @@ const MeatCountryFilter = () => {
         { flag: Ecuador, name: "Ecuador" },
         { flag: India, name: "India" },
         { flag: Uruguay, name: "Uruguay" },
+        { flag: usa, name: "USA" },
+
     ];
     useEffect(() => {
         const fetchData = async () => {
@@ -51,12 +55,12 @@ const MeatCountryFilter = () => {
             gap={{ xs: "32px" }}
             sx={{ paddingY: { xs: "32px", sm: "48px", md: "64px" }, paddingX: { xs: "20px", sm: "32px", md: "128px",lg:"200px",xl:"20%"} }}
         >
-            <HeadSection name={t('name')} more={t('more')} /> 
+            <HeadSection name={t('name')}/> 
 
             <Stack 
                 flexDirection="row"
                 sx={{
-                    gap: { xs: "20px", sm: "32px", md: "64px", lg: "128px" },
+                    gap: { xs: "20px", sm: "32px", md: "64px", lg: "95px" },
                     cursor: "pointer",
                     textAlign: { xs: "center", sm: "initial" },
                 }}
@@ -75,8 +79,8 @@ const MeatCountryFilter = () => {
                             src={country.flag} 
                             alt={country.name}
                             sx={{
-                                width: { xs: "18px", sm: "20px", md: "30px", lg: "40px",xl:"90px" },
-                                height: { xs: "18px", sm: "20px", md: "30px", lg: "40px",xl:"90px" },
+                                width: { xs: "18px", sm: "20px", md: "30px", lg: "64px",xl:"90px" },
+                                height: { xs: "18px", sm: "20px", md: "30px", lg: "64px",xl:"90px" },
                             }}
                         />
                         <Typography variant="body1" sx={{ fontSize: { xs: "12px", sm: "14px", md: "16px",xl:'25px' } }}>

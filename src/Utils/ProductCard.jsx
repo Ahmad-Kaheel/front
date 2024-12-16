@@ -7,8 +7,9 @@ const ProductCard = ({
   name,
   price,
   onBuyClick,
-  cardHeight = "400px",
-  cardWidth = "100%",
+  oldPrice,
+  newPrice  
+
 }) => {
   const { t, i18n } = useTranslation("discover");
 
@@ -16,8 +17,8 @@ const ProductCard = ({
     <Box
       sx={{
         position: "relative",
-        width: cardWidth,
-        height: cardHeight,
+        maxWidth:"272px",
+        height: {xs:"150px",sm:"250px",md:"272px",lg:"272px"},
         borderRadius: "16px",
         overflow: "hidden",
         boxSizing: "border-box",
@@ -51,14 +52,15 @@ const ProductCard = ({
 
       {/* Content */}
       <Stack
-        spacing={2}
+        // spacing={2}
+        gap={{xs:"4px",md:"10px"}}
         sx={{
           position: "absolute",
           bottom: "20px",
           width: "100%",
           zIndex: 11,
           color: "white",
-          alignItems: i18n.language === "ar" ? "flex-end" : "flex-start", // التحكم بالمحاذاة
+          alignItems: i18n.language === "ar" ? "flex-start" : "flex-end", // التحكم بالمحاذاة
           padding: "0 20px", // الإزاحة عن الجوانب
           boxSizing: "border-box",
           textAlign: i18n.language === "ar" ? "right" : "left",
@@ -67,12 +69,17 @@ const ProductCard = ({
         <Typography
           fontWeight={700}
           sx={{
-            fontSize: { xs: "20px", sm: "24px", md: "28px" },
+            fontSize: { xs: "10px", sm: "13px", md: "16px" },
             width: "100%",
           }}
         >
           {name}
         </Typography>
+          <Box sx={{ position: "relative" }}>
+              <Typography fontWeight={700} sx={{fontSize: { xs: "10px", sm: "13px", md: "16px" }, }}>{oldPrice}</Typography>
+              <Box width={"86%"} height={"3px"} sx={{ bgcolor: "colors.red0", position: "absolute", right: "0", top: "50%" }} />
+          </Box>
+          <Typography fontWeight={700} sx={{ fontSize: { xs: "13px", sm: "17px", md: "20px"} }}>{newPrice}</Typography>
         <Typography
           fontWeight={600}
           sx={{
