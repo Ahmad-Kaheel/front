@@ -12,6 +12,8 @@ import x from "../assets/images-and-icons/social/X.svg"
 import youtube from "../assets/images-and-icons/social/Youtube.svg"
 import googlePlay from "../assets/images-and-icons/application/googlePlay.svg"
 import appleStore from "../assets/images-and-icons/application/AppStore.svg"
+import hawawei from "../assets/images-and-icons/application/Huawei.svg"
+
 import qr from "../assets/images-and-icons/application/Qr.svg"
 
 import logo from "../assets/images-and-icons/nav2/logo.png"
@@ -44,7 +46,7 @@ const Footer = () => {
     };
 
   return (
-    <Stack sx={{bgcolor:"colors.black0", paddingTop: { xs: "32px", sm: "48px", md: "64px" }, paddingX: { xs: "28px", sm: "32px", md: "128px",lg:"200px" ,xl:"20%"} }}>
+    <Stack sx={{bgcolor:"colors.black0", paddingTop: { xs: "32px", sm: "48px", md: "64px" }, paddingX: { xs: "28px", sm: "32px", md: "128px",lg:"200px" ,xl:"20%"},maxWidth:"1400px",margin:"auto" }}>
         <Stack flexDirection={{xs:"column",md:"row"}} gap={"20px"} justifyContent={{xs:"center",md:"space-between"}} alignItems={{xs:"center",md:"flex-end"}} sx={{borderBottom:1,paddingY:"64px",borderWidth:"2px",borderColor:"colors.white0"}}>
             <Stack gap={"63px"}>
                 <Box component="img" src={logo} sx={{width:"94px",height:"100px"}}/>
@@ -69,7 +71,7 @@ const Footer = () => {
                     <Stack direction={"row"} alignItems={"center"} gap={"24px"}>
                         <Box component={"img"} src={qr}/>
 
-                        <Stack gap={"32px"} flexDirection={"column"}>
+                        <Stack gap={"16px"} flexDirection={"column"}>
                             <Stack gap={"8px"} flexDirection={"row"} sx={{padding:"8px 16px",cursor:"pointer", border:1,borderstyle:"solid",borderWidth:"1px",borderRadius:"4px",borderColor:"colors.white0"}}>
                                 <Typography  fontWeight={400} fontSize={"16px"} color='colors.white0'>App store</Typography>
                                 <Box component="img" src={appleStore} />
@@ -78,6 +80,10 @@ const Footer = () => {
 
                             <Typography  fontWeight={400} fontSize={"16px"} color='colors.white0'>Google play</Typography>
                                 <Box component="img" src={googlePlay} />
+                            </Stack>
+                            <Stack gap={"8px"} flexDirection={"row"} sx={{padding:"8px 16px",cursor:"pointer", border:1,borderstyle:"solid",borderWidth:"1px",borderRadius:"4px",borderColor:"colors.white0"}}>
+                                <Typography  fontWeight={400} fontSize={"16px"} color='colors.white0'>App Gallery</Typography>
+                                <Box component="img" src={hawawei} />
                             </Stack>
                         </Stack>
                     </Stack>

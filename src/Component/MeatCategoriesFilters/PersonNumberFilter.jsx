@@ -4,6 +4,8 @@ import two from "../../assets/images-and-icons/CategoryFilters/Users/2.png";
 import three from "../../assets/images-and-icons/CategoryFilters/Users/3.svg";
 import four from "../../assets/images-and-icons/CategoryFilters/Users/4.png";
 import five from "../../assets/images-and-icons/CategoryFilters/Users/5.png";
+import six from "../../assets/images-and-icons/CategoryFilters/Users/6.svg";
+
 import { Box, Stack, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import HeadSection from "../../Utils/HeadSection";
@@ -17,6 +19,8 @@ const PersonNumberFilter = () => {
     { image: three, name: "ثلاثة أشخاص" },
     { image: four, name: "أربع أشخاص" },
     { image: five, name: "خمس أشخاص" },
+    { image: six, name: "ست أشخاص" },
+
   ];
 
   return (

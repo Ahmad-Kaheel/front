@@ -38,8 +38,9 @@ const Checkout = () => {
           <Typography>{t('choice')}</Typography>
         </Stack>
         <Typography>{t('label')}</Typography>
-        <FormControl>
+        <FormControl >
           <RadioGroup value={value} onChange={handleChange}>
+            <Stack gap={"10px"}>
             <PaymentOption value="paypal" label="Paypal" imgSrc={paypal} selectedValue={value} onChange={handleChange} />
             <PaymentOption value="Apple" label="Apple pay" imgSrc={apple} selectedValue={value} onChange={handleChange} />
             <PaymentOption value="visa" label="Visa Card" imgSrc={visa} selectedValue={value} onChange={handleChange} />
@@ -54,7 +55,7 @@ const Checkout = () => {
             <PaymentOption value="mada" label="مدى" imgSrc={mada} selectedValue={value} onChange={handleChange} />
             {value === 'mada' && <CardDetail />}
 
-
+            </Stack>
           </RadioGroup>
         </FormControl>
       </Stack>

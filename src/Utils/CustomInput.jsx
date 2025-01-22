@@ -16,6 +16,7 @@ export const CustomInput = ({ language, label, type, onChange, required,error ,h
       InputLabelProps={{
         className: language === "ar" ? 'custom-label-rtl' : ''
       }}
+      size='small'
       onBlur={onBlur}
       required={required}
       error={error} // تحديد الخطأ بناءً على حالة "error"

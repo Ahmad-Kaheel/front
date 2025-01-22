@@ -5,7 +5,10 @@ import img2 from "../assets/images-and-icons/CategoryFilters/Frozen.png";
 import img3 from "../assets/images-and-icons/CategoryFilters/Imported.png";
 import img4 from "../assets/images-and-icons/CategoryFilters/Soft.png";
 import img5 from "../assets/images-and-icons/CategoryFilters/Spiced.png";
+import img6 from "../assets/images-and-icons/CategoryFilters/Imported.png";
+import img7 from "../assets/images-and-icons/CategoryFilters/img1.jpg";
 import gift from "../assets/images-and-icons/product/gift.svg"
+import message from "../assets/images-and-icons/product/message.svg"
 import basket from "../assets/images-and-icons/product/Shopping.svg"
 import meat from "../assets/images-and-icons/nav1/meat.png"
 import halal from "../assets/images-and-icons/nav1/halal.png"
@@ -32,7 +35,7 @@ import FullScreenImage from '../Component/FullScreenImage';
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet-async';
 const Product = () => {
-  const images = [img1, img2, img3, img4, img5];
+  const images = [img1, img2, img3, img4, img5,img6,img7];
   const { t, i18n } = useTranslation("product");
 
   const [favorites, setFavorites] = useState(false); // لحفظ حالة المفضلة لكل منتج
@@ -49,7 +52,7 @@ const Product = () => {
     setValue(newValue);
   };
   return (
-    <Stack gap="64px" sx={{ paddingY: "64px", paddingX: { xs: "20px", sm: "32px", md: "128px", lg: "200px",xl:"20%" } }}>
+    <Stack gap="64px" sx={{ paddingY: "64px",paddingBottom:"128px", paddingX: { xs: "20px", sm: "32px", md: "128px", lg: "200px",xl:"20%" },position:"relative",maxWidth:"1400px",margin:"auto" }}>
        <Helmet>
         <title>لحم المى - متجر اللحوم الطازجة</title>
         <meta name="description" content="لحم المى - من أجود أنواع اللحوم الطازجة. اطلب الآن وتمتع بمذاق فريد من نوعه." />
@@ -92,51 +95,45 @@ const Product = () => {
             ))}
           </Stack>
           <Box
-            sx={{
-              position: "relative",
-              flex: 1,
-              width:"300px",
-              height:"100%",
-              maxHeight: "100%", // تقييد الارتفاع ليكون بنفس ارتفاع المواصفات
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              overflow: "hidden", // منع تجاوز الصورة
-              borderRadius:"16px"
-            }}
-          >
-            <Box
-              component="img"
-              src={mainImage}
-              sx={{
-                width:"100%",
-                height: "100%", // تقييد الارتفاع
-                maxHeight: "100%", // الالتزام بأقصى ارتفاع
-                borderRadius: "16px",
-                objectFit: "cover", // ضمان احتواء الصورة داخل الحاوية
-              }}
-            />
-            <Stack position={"absolute"} top={"30px"} left={{ xs: "20px", lg: "60px" }} zIndex={10}>
-              <IconButton aria-label="add to favorites" onClick={() => toggleFavorite()}>
-                {favorites ? (
-                  <Box sx={{ bgcolor: "white", display: "flex", justifyContent: "center", alignItems: "center", padding: "5px", borderRadius: "50%" }}>
-                    <FavoriteIcon sx={{ fontSize: "30px", fill: "red" }} />
-                  </Box>
-                ) : (
-                  <Box sx={{ bgcolor: "white", display: "flex", justifyContent: "center", alignItems: "center", padding: "5px", borderRadius: "50%" }}>
-                    <FavoriteBorderIcon sx={{ fontSize: "30px" }} />
-                  </Box>
-                )}
-              </IconButton>
-            </Stack>
-            <Stack position={"absolute"} bottom={"30px"} left={{ xs: "20px", lg: "60px" }} zIndex={10}>
-              <IconButton aria-label="full screen">
-                <Box sx={{ bgcolor: "white", display: "flex", justifyContent: "center", alignItems: "center", padding: "5px", borderRadius: "50%" }}>
-                  <FullscreenExitIcon sx={{ fontSize: "30px", color: "black" }} onClick={() => setOpen(true)} />
-                </Box>
-              </IconButton>
-            </Stack>
-          </Box>
+  sx={{
+    // width: "64px", // نفس عرض الصور الجانبية
+    height: "100%", // نفس ارتفاع الصور الجانبية
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    position: "relative",
+    overflow: "hidden",
+    borderRadius: "16px",
+  }}
+>
+  <Box
+    component="img"
+    src={mainImage}
+    sx={{
+      width: "100%",
+      height: "100%",
+      objectFit: "cover", // لضمان تغطية المساحة بنفس الأسلوب
+    }}
+  />
+  {/* Favorite Icon */}
+  <IconButton
+    aria-label="add to favorites"
+    onClick={toggleFavorite}
+    sx={{ position: "absolute", top: "20px", left: "20px", zIndex: 10,bgcolor:"white" }}
+  >
+    {favorites ? <FavoriteIcon sx={{ color: "red" }} /> : <FavoriteBorderIcon sx={{ color: "red" }}/>}
+  </IconButton>
+  {/* Fullscreen Icon */}
+  <IconButton
+    aria-label="fullscreen"
+    onClick={() => setOpen(true)}
+    sx={{ position: "absolute", bottom: "20px", left: "20px", zIndex: 10 ,bgcolor:"white"}}
+  >
+    <FullscreenExitIcon />
+  </IconButton>
+</Box>
+
+
         </Stack>
         <Stack gap={"16px"} sx={{ flex: 1, height: "auto" }}>
           <Stack direction={"row"} gap={"64px"}>
@@ -286,8 +283,26 @@ const Product = () => {
             ))}
           </Stack>
         </Stack>
+        
       </Stack>
       <FullScreenImage open={open} setOpen={setOpen} slides={images} />
+      <IconButton
+          aria-label="message"
+          // onClick={handleMessage}
+          sx={{
+            position: "absolute",
+            bottom: "40px", // يجعل الأيقونة في الأسفل
+            left: "60px", // يحرك الأيقونة قليلاً إلى اليسار
+            zIndex: 10,
+            bgcolor:"colors.red0",
+            width:"60px",
+            height:"60px",
+            borderRadius:"50%",
+            "&:hover":{bgcolor:"black"}
+          }}
+        >
+          <Box component={"img"} src={message} />
+        </IconButton>
     </Stack>
   );
 };

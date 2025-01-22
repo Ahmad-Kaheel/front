@@ -27,6 +27,7 @@ import PaymentInfo from './Component/PaymentInfo';
 import Welcome from './pages/Welcome';
 import { useDispatch } from 'react-redux';
 import { setUser } from './state/slices/UserSlice';
+import MapComponent from './Component/MapComponent';
 function App() {
   const { t, i18n } = useTranslation();
   const dispatch = useDispatch();
@@ -63,6 +64,8 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/register-customer' element={< RegisterC/>} />
             <Route path='/register-vendor' element={< RegisterB/>} />
+            <Route path='/map' element={< MapComponent/>} />
+
             <Route path="/profile" element={<Profile />}>
               <Route index element={<ProfileData />} /> {/* هذا يعرض ProfileData عندما يكون الرابط /profile فقط */}
               <Route path="data" element={<ProfileData />} />

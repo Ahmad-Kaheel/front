@@ -1,7 +1,7 @@
-import { Box, Stack, Typography } from '@mui/material';
+import { Box, Button, Stack, Typography } from '@mui/material';
 import React from 'react';
 import { useTranslation } from 'react-i18next'; // استيراد مكتبة الترجمة
-import user from "../assets/images-and-icons/welcome/user.svg";
+import user from "../assets/images-and-icons/welcome/user.png";
 import company from "../assets/images-and-icons/welcome/company.svg";
 
 const Welcome = () => {
@@ -11,6 +11,8 @@ const Welcome = () => {
     <Stack 
       sx={{
         minHeight: "100vh", 
+        maxWidth:"1400px",
+        margin:"auto",
         width: "100%", 
         justifyContent: "center", 
         paddingY:"32px",
@@ -32,14 +34,7 @@ const Welcome = () => {
         >
           {t("welcome.title")}
         </Typography>
-        <Typography 
-          fontSize={{ xs: "14px", sm: "18px" }} // Adjust font size based on screen size
-          sx={{ width: "auto", textAlign: "center" }} 
-          fontWeight={400} 
-          color='text.paragraph'
-        >
-          {t("welcome.description")}
-        </Typography>
+        
       </Stack>
 
       <Stack 
@@ -69,23 +64,14 @@ const Welcome = () => {
             fontSize={"16px"} 
             fontWeight={600}
           >
-            {t("welcome.forCompanies.title")}
+            {t("welcome.forIndividuals.title")}
           </Typography>
-          <Typography 
-            fontSize={"14px"} 
-            fontWeight={400}
+          
+          <Button 
+           sx={{bgcolor:"colors.red0",color:"white"}}
           >
-            {t("welcome.forCompanies.description")}
-          </Typography>
-          <Typography 
-            color={"colors.red0"} 
-            fontSize={"16px"} 
-            width={"100%"} 
-            fontWeight={400} 
-            sx={{ textDecoration: "underline", cursor: "pointer",textAlign:"end" }}
-          >
-            {t("welcome.forCompanies.login")}
-          </Typography>
+            {t("welcome.forIndividuals.login")}
+          </Button>
         </Stack>
 
         {/* اللحم الذهبي للأفراد */}
@@ -108,23 +94,13 @@ const Welcome = () => {
             fontSize={"16px"} 
             fontWeight={600}
           >
-            {t("welcome.forIndividuals.title")}
+            {t("welcome.forCompanies.title")}
           </Typography>
-          <Typography 
-            fontSize={"14px"} 
-            fontWeight={400}
+          <Button 
+           sx={{bgcolor:"colors.red0",color:"white"}}
           >
-            {t("welcome.forIndividuals.description")}
-          </Typography>
-          <Typography 
-            color={"colors.red0"} 
-            fontSize={"16px"} 
-            width={"100%"} 
-            fontWeight={400} 
-            sx={{ textDecoration: "underline", cursor: "pointer",textAlign:"end" }}
-          >
-            {t("welcome.forIndividuals.login")}
-          </Typography>
+            {t("welcome.forCompanies.login")}
+          </Button>
         </Stack>
       </Stack>
     </Stack>

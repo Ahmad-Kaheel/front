@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 
 const Nav1 = () => {
     const { t, i18n } = useTranslation('nav1');
-    const [locat, setLocat] = useState('Ryadh'); // الموقع الافتراضي
+    const [locat, setLocat] = useState('Ryadh');
     const language = i18n.language; // اللغة الحالية من i18n
 
     // استعادة اللغة من localStorage عند بدء التطبيق

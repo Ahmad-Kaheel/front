@@ -130,7 +130,7 @@ const Payment = () => {
                 </Box>
 
                 <Stack direction={{ xs: "column", md: "row" }} gap="64px" sx={{ width: "100%", justifyContent: "center" }}>
-                    <Stack direction={{xs:"column-reverse",md:"row"}} gap={"60px"}>
+                    <Stack direction={{xs:"column-reverse",md:"row-reverse"}} gap={"60px"}>
                         <PaymentInfo
                             activeStep={activeStep}
                             setActiveStep={setActiveStep}
