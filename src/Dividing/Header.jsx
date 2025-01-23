@@ -9,15 +9,30 @@ const Header = () => {
     const isSmallScreen = useMediaQuery('(max-width:600px)');
 
     return (
-        <Box sx={{maxWidth:"1700px",margin:"auto"}}>
+        <Box >
             {isSmallScreen ? (
                 // عرض MobileNavigation فقط للشاشات الصغيرة
                 <MobileNavigation />
             ) : (
                 // عرض Nav1 و Nav2 للشاشات الكبيرة
                 <>
-                    <Nav1 />
-                    <Nav2 />
+                    <Box 
+                    className='gradient-border'
+                    sx={{
+                        borderBottomWidth: "4px",
+                        borderBottomStyle: "solid",
+                        borderImage: "gradient.red_line",
+                    }}
+                    >
+                        <Box sx={{maxWidth:"2000px",margin:"auto"}}>
+                            <Nav1 />
+                        </Box>
+                    </Box>
+                    <Box className='nav-shadow'>
+                        <Box sx={{maxWidth:"2000px",margin:"auto"}}>
+                            <Nav2 />
+                        </Box>
+                    </Box>
                 </>
             )}
         </Box>

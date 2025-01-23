@@ -34,14 +34,12 @@ const Nav1 = () => {
             direction={"row"} 
             alignItems={"center"} 
             justifyContent={"space-between"} 
-            className='gradient-border'
+            
             sx={{
                 paddingX: { xs: "28px", sm: "32px", md: "128px", lg: "200px", xl:"20%" },
                 paddingY: "16px",
                 height: { xs: "auto", md: "65px" },
-                borderBottomWidth: "4px",
-                borderBottomStyle: "solid",
-                borderImage: "gradient.red_line",
+                
             }}
             role="navigation" // تحسين SEO
             aria-label={t('main_navigation')}

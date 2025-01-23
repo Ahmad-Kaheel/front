@@ -34,14 +34,16 @@ const PersonNumberFilter = () => {
       <HeadSection name={t("name")} more={t("more")} />
 
       {/* Container for all items */}
-      <Box
-        sx={{
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "center",
-          gap: { xs: "16px", sm: "24px", md: "32px" }, // Space between items
-        }}
-      >
+      <Stack 
+                flexDirection="row"
+                sx={{
+                    gap: { xs: "20px", sm: "32px", md: "64px", lg: "95px" },
+                    cursor: "pointer",
+                    textAlign: { xs: "center", sm: "initial" },
+                }}
+                justifyContent={"center"}
+                alignItems={"center"}
+            >
         {data.map((person, index) => (
           <Stack
             key={index}
@@ -75,7 +77,7 @@ const PersonNumberFilter = () => {
             </Typography>
           </Stack>
         ))}
-      </Box>
+      </Stack>
     </Stack>
   );
 };

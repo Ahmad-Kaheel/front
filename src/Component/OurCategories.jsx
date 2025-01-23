@@ -40,9 +40,8 @@ const OurCategories = () => {
 
       <Box
         sx={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(4, 1fr)', // أربعة أعمدة ثابتة
-          gap: { xs: '10px', sm: '15px', md: '20px' }, // استجابة لمسافات الشبكة
+          display: 'flex',
+          justifyContent: 'space-between',
         }}
       >
         {data.map((cat, index) => (

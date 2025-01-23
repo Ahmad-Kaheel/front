@@ -46,154 +46,156 @@ const Footer = () => {
     };
 
   return (
-    <Stack sx={{bgcolor:"colors.black0", paddingTop: { xs: "32px", sm: "48px", md: "64px" }, paddingX: { xs: "28px", sm: "32px", md: "128px",lg:"200px" ,xl:"20%"},maxWidth:"1700px",margin:"auto" }}>
-        <Stack flexDirection={{xs:"column",md:"row"}} gap={"20px"} justifyContent={{xs:"center",md:"space-between"}} alignItems={{xs:"center",md:"flex-end"}} sx={{borderBottom:1,paddingY:"64px",borderWidth:"2px",borderColor:"colors.white0"}}>
-            <Stack gap={"63px"}>
-                <Box component="img" src={logo} sx={{width:"94px",height:"100px"}}/>
-                <Stack gap={"32px"} flexDirection={"row"} color={"colors.white0"}>
-                    <Typography fontWeight={400} fontSize={"16px"}>{t("commercial")}</Typography>
-                    <Typography  fontWeight={400} fontSize={"16px"}>0102011</Typography>
-                </Stack>
-                <Stack gap={"32px"}>
-                    <Typography  fontWeight={400} fontSize={"16px"} color={"colors.white0"}>{t("social")}</Typography>
-                    <Stack flexDirection={"row"} gap={"16px"} sx={{flexWrap:{xs:"wrap",md:"nowrap"}}}> 
-                        {
-                            social.map((icon)=>{
-                                return(
-                                    <Box component="img" src={icon.img} sx={{width:"24px",height:"24px",cursor:"pointer"}}/>
-                                )
-                            })
-                        }
+    <Box sx={{bgcolor:"colors.black0", paddingTop: { xs: "32px", sm: "48px", md: "64px" }, paddingX: { xs: "28px", sm: "32px", md: "128px",lg:"200px" ,xl:"20%"}}}>
+        <Stack sx={{maxWidth:"2000px",margin:"auto"}}>
+            <Stack flexDirection={{xs:"column",md:"row"}} gap={"20px"} justifyContent={{xs:"center",md:"space-between"}} alignItems={{xs:"center",md:"flex-end"}} sx={{borderBottom:1,paddingY:"64px",borderWidth:"2px",borderColor:"colors.white0"}}>
+                <Stack gap={"63px"}>
+                    <Box component="img" src={logo} sx={{width:"94px",height:"100px"}}/>
+                    <Stack gap={"32px"} flexDirection={"row"} color={"colors.white0"}>
+                        <Typography fontWeight={400} fontSize={"16px"}>{t("commercial")}</Typography>
+                        <Typography  fontWeight={400} fontSize={"16px"}>0102011</Typography>
                     </Stack>
-                </Stack>
-                <Stack gap={"32px"}>
-                    <Typography  fontWeight={400} fontSize={"16px"} color='colors.white0'>{t("download")}</Typography>
-                    <Stack direction={"row"} alignItems={"center"} gap={"24px"}>
-                        <Box component={"img"} src={qr}/>
+                    <Stack gap={"32px"}>
+                        <Typography  fontWeight={400} fontSize={"16px"} color={"colors.white0"}>{t("social")}</Typography>
+                        <Stack flexDirection={"row"} gap={"16px"} sx={{flexWrap:{xs:"wrap",md:"nowrap"}}}> 
+                            {
+                                social.map((icon)=>{
+                                    return(
+                                        <Box component="img" src={icon.img} sx={{width:"24px",height:"24px",cursor:"pointer"}}/>
+                                    )
+                                })
+                            }
+                        </Stack>
+                    </Stack>
+                    <Stack gap={"32px"}>
+                        <Typography  fontWeight={400} fontSize={"16px"} color='colors.white0'>{t("download")}</Typography>
+                        <Stack direction={"row"} alignItems={"center"} gap={"24px"}>
+                            <Box component={"img"} src={qr}/>
 
-                        <Stack gap={"16px"} flexDirection={"column"}>
-                            <Stack gap={"8px"} flexDirection={"row"} sx={{padding:"8px 16px",cursor:"pointer", border:1,borderstyle:"solid",borderWidth:"1px",borderRadius:"4px",borderColor:"colors.white0"}}>
-                                <Typography  fontWeight={400} fontSize={"16px"} color='colors.white0'>App store</Typography>
-                                <Box component="img" src={appleStore} />
-                            </Stack>
-                            <Stack gap={"8px"} flexDirection={"row"} sx={{padding:"8px 16px",cursor:"pointer", border:1,borderstyle:"solid",borderWidth:"1px",borderRadius:"4px",borderColor:"colors.white0"}}>
+                            <Stack gap={"16px"} flexDirection={"column"}>
+                                <Stack gap={"8px"} flexDirection={"row"} sx={{padding:"8px 16px",cursor:"pointer", border:1,borderstyle:"solid",borderWidth:"1px",borderRadius:"4px",borderColor:"colors.white0"}}>
+                                    <Typography  fontWeight={400} fontSize={"16px"} color='colors.white0'>App store</Typography>
+                                    <Box component="img" src={appleStore} />
+                                </Stack>
+                                <Stack gap={"8px"} flexDirection={"row"} sx={{padding:"8px 16px",cursor:"pointer", border:1,borderstyle:"solid",borderWidth:"1px",borderRadius:"4px",borderColor:"colors.white0"}}>
 
-                            <Typography  fontWeight={400} fontSize={"16px"} color='colors.white0'>Google play</Typography>
-                                <Box component="img" src={googlePlay} />
-                            </Stack>
-                            <Stack gap={"8px"} flexDirection={"row"} sx={{padding:"8px 16px",cursor:"pointer", border:1,borderstyle:"solid",borderWidth:"1px",borderRadius:"4px",borderColor:"colors.white0"}}>
-                                <Typography  fontWeight={400} fontSize={"16px"} color='colors.white0'>App Gallery</Typography>
-                                <Box component="img" src={hawawei} />
+                                <Typography  fontWeight={400} fontSize={"16px"} color='colors.white0'>Google play</Typography>
+                                    <Box component="img" src={googlePlay} />
+                                </Stack>
+                                <Stack gap={"8px"} flexDirection={"row"} sx={{padding:"8px 16px",cursor:"pointer", border:1,borderstyle:"solid",borderWidth:"1px",borderRadius:"4px",borderColor:"colors.white0"}}>
+                                    <Typography  fontWeight={400} fontSize={"16px"} color='colors.white0'>App Gallery</Typography>
+                                    <Box component="img" src={hawawei} />
+                                </Stack>
                             </Stack>
                         </Stack>
                     </Stack>
                 </Stack>
-            </Stack>
-            <Stack gap={"145px"} alignItems={"flex-end"}> 
-                <Stack sx={{gap:{xs:"20px",sm:"25px",md:"35px",lg:"64px"}}} flexDirection={"row"}>
-                    <Stack gap={"32px"}>
-                        <Typography color='colors.gray0' fontWeight={400} fontSize={"16px"} >{t("discover")} </Typography>
-                        <Typography color='colors.white0' fontWeight={400} fontSize={"16px"} sx={{cursor:"pointer"}}>{t("partner")}</Typography>
-                        <Typography color='colors.white0' fontWeight={400} fontSize={"16px"} sx={{cursor:"pointer"}}> {t("political")} </Typography>
-                    </Stack>
-                   
-                    <Stack gap={"32px"}>
-                        <Typography color='colors.gray0' fontWeight={400} fontSize={"16px"}>{t("know")}</Typography>
-                        <Typography color='colors.white0' fontWeight={400} fontSize={"16px"} sx={{cursor:"pointer"}}>{t("who")}</Typography>
-                        <Typography color='colors.white0' fontWeight={400} fontSize={"16px"} sx={{cursor:"pointer"}}> {t("policy")} </Typography>
-                    </Stack>
+                <Stack gap={"145px"} alignItems={"flex-end"}> 
+                    <Stack sx={{gap:{xs:"20px",sm:"25px",md:"35px",lg:"64px"}}} flexDirection={"row"}>
+                        <Stack gap={"32px"}>
+                            <Typography color='colors.gray0' fontWeight={400} fontSize={"16px"} >{t("discover")} </Typography>
+                            <Typography color='colors.white0' fontWeight={400} fontSize={"16px"} sx={{cursor:"pointer"}}>{t("partner")}</Typography>
+                            <Typography color='colors.white0' fontWeight={400} fontSize={"16px"} sx={{cursor:"pointer"}}> {t("political")} </Typography>
+                        </Stack>
+                    
+                        <Stack gap={"32px"}>
+                            <Typography color='colors.gray0' fontWeight={400} fontSize={"16px"}>{t("know")}</Typography>
+                            <Typography color='colors.white0' fontWeight={400} fontSize={"16px"} sx={{cursor:"pointer"}}>{t("who")}</Typography>
+                            <Typography color='colors.white0' fontWeight={400} fontSize={"16px"} sx={{cursor:"pointer"}}> {t("policy")} </Typography>
+                        </Stack>
 
-                    <Stack gap={"32px"}>
-                        <Typography color='colors.gray0' fontWeight={400} fontSize={"16px"}>{t("customer")}</Typography>
-                        <Typography color='colors.white0' fontWeight={400} fontSize={"16px"} sx={{cursor:"pointer"}}>{t("question")}</Typography>
-                        <Typography color='colors.white0' fontWeight={400} fontSize={"16px"} sx={{cursor:"pointer"}}>{ t("condition") }</Typography>
+                        <Stack gap={"32px"}>
+                            <Typography color='colors.gray0' fontWeight={400} fontSize={"16px"}>{t("customer")}</Typography>
+                            <Typography color='colors.white0' fontWeight={400} fontSize={"16px"} sx={{cursor:"pointer"}}>{t("question")}</Typography>
+                            <Typography color='colors.white0' fontWeight={400} fontSize={"16px"} sx={{cursor:"pointer"}}>{ t("condition") }</Typography>
+                        </Stack>
                     </Stack>
-                </Stack>
-                <Stack direction={"row"} alignItems={"center"} gap={{ xs: "16px", md: "32px" }} sx={{ mt: { xs: "16px", md: 0 } }}>
-                    <FormControl  sx={{ width: "167px", height: "auto" }}>
-                        <Select
-                            value={locat}
-                            onChange={handleChange}
-                            displayEmpty
-                            
-                            sx={{
-                                height: "25px",
-                                border: "2px solid",
-                                borderColor: "colors.white0",
+                    <Stack direction={"row"} alignItems={"center"} gap={{ xs: "16px", md: "32px" }} sx={{ mt: { xs: "16px", md: 0 } }}>
+                        <FormControl  sx={{ width: "167px", height: "auto" }}>
+                            <Select
+                                value={locat}
+                                onChange={handleChange}
+                                displayEmpty
+                                
+                                sx={{
+                                    height: "25px",
+                                    border: "2px solid",
+                                    borderColor: "colors.white0",
+                                    borderRadius: "8px",
+                                    fontSize: "14px",
+                                    color: "colors.white0",
+                                    "& .MuiOutlinedInput-notchedOutline": {
+                                        border: "none",
+                                    },
+                                    "& .MuiSelect-icon": {
+                                        color:"white",
+                                        right: i18n.language === 'en' ? '10px' : 'unset', 
+                                        left: i18n.language === 'ar' ? '10px' : 'unset', 
+                                    },
+                                }}
+                            >
+                                <MenuItem value={"Ryadh"}>{t('select1')}</MenuItem>
+                                <MenuItem value={"jaddah"}>{t('select2')}</MenuItem>
+                                <MenuItem value={"khobar"}>{t('select3')}</MenuItem>
+                            </Select>
+                        </FormControl>
+
+                        <Box 
+                            onClick={handleToggleLanguage}
+                            sx={{ 
+                                cursor: "pointer", 
+                                display: "flex", 
+                                alignItems: "center", 
+                                justifyContent: "center", 
+                                width: "61px", 
+                                height: "25px", 
+                                fontSize: "14px", 
+                                border: "1px", 
+                                borderColor: "colors.white0", 
+                                borderStyle: "solid", 
                                 borderRadius: "8px",
-                                fontSize: "14px",
-                                color: "colors.white0",
-                                "& .MuiOutlinedInput-notchedOutline": {
-                                    border: "none",
-                                },
-                                "& .MuiSelect-icon": {
-                                    color:"white",
-                                    right: i18n.language === 'en' ? '10px' : 'unset', 
-                                    left: i18n.language === 'ar' ? '10px' : 'unset', 
-                                },
+                                color:"colors.white0"
+                                
                             }}
                         >
-                            <MenuItem value={"Ryadh"}>{t('select1')}</MenuItem>
-                            <MenuItem value={"jaddah"}>{t('select2')}</MenuItem>
-                            <MenuItem value={"khobar"}>{t('select3')}</MenuItem>
-                        </Select>
-                    </FormControl>
-
-                    <Box 
-                        onClick={handleToggleLanguage}
-                        sx={{ 
-                            cursor: "pointer", 
-                            display: "flex", 
-                            alignItems: "center", 
-                            justifyContent: "center", 
-                            width: "61px", 
-                            height: "25px", 
-                            fontSize: "14px", 
-                            border: "1px", 
-                            borderColor: "colors.white0", 
-                            borderStyle: "solid", 
-                            borderRadius: "8px",
-                            color:"colors.white0"
-                             
-                        }}
-                    >
-                        {i18n.language === 'ar' ? 'English' : 'العربية'}
-                    </Box>
+                            {i18n.language === 'ar' ? 'English' : 'العربية'}
+                        </Box>
+                    </Stack>
+                </Stack>
+            </Stack>
+            <Stack flexDirection={{xs:"column",md:"row"}} gap={"20px"} justifyContent={"space-between"} alignItems={"center"} sx={{paddingY:"64px"}}>
+                <Typography fontWeight={400} fontSize={"14px"} color={"colors.white0"}> 
+                {t("privacy")}
+                </Typography>
+                <Stack flexDirection={"row"} gap={"16px"}>
+                    <Stack flexDirection={"row"} alignItems={"center"} gap="8px"> 
+                        <Box sx={{width:"4px",height:"4px",bgcolor:"colors.white0",borderRadius:"50%"}}/>
+                        <Typography fontWeight={400} fontSize={"14px"} color={"colors.white0"}>{t("condition")}</Typography>
+                    </Stack>
+                    <Stack flexDirection={"row"} alignItems={"center"} gap="8px"> 
+                        <Box sx={{width:"4px",height:"4px",bgcolor:"colors.white0",borderRadius:"50%"}}/>
+                        <Typography fontWeight={400} fontSize={"14px"} color={"colors.white0"}>{t("policy")}</Typography>
+                    </Stack>
+                </Stack>
+                <Stack gap="8px">
+                    <Stack flexDirection={"row"} gap={"8px"}>
+                        <Box component={"img"} src={p1} />
+                        <Box component={"img"} src={p2} />
+                        <Box component={"img"} src={p3} />
+                        <Box component={"img"} src={p4} />
+                        <Box component={"img"} src={p5} />
+                    </Stack>
+                    <Stack flexDirection={"row"} gap={"8px"}>
+                        <Box component={"img"} src={p6} />
+                        <Box component={"img"} src={p7} />
+                        <Box component={"img"} src={p8} />
+                        <Box component={"img"} src={p9} />
+                        <Box component={"img"} src={p10} />
+                    </Stack>
                 </Stack>
             </Stack>
         </Stack>
-        <Stack flexDirection={{xs:"column",md:"row"}} gap={"20px"} justifyContent={"space-between"} alignItems={"center"} sx={{paddingY:"64px"}}>
-            <Typography fontWeight={400} fontSize={"14px"} color={"colors.white0"}> 
-            {t("privacy")}
-            </Typography>
-            <Stack flexDirection={"row"} gap={"16px"}>
-                <Stack flexDirection={"row"} alignItems={"center"} gap="8px"> 
-                    <Box sx={{width:"4px",height:"4px",bgcolor:"colors.white0",borderRadius:"50%"}}/>
-                    <Typography fontWeight={400} fontSize={"14px"} color={"colors.white0"}>{t("condition")}</Typography>
-                </Stack>
-                <Stack flexDirection={"row"} alignItems={"center"} gap="8px"> 
-                    <Box sx={{width:"4px",height:"4px",bgcolor:"colors.white0",borderRadius:"50%"}}/>
-                    <Typography fontWeight={400} fontSize={"14px"} color={"colors.white0"}>{t("policy")}</Typography>
-                </Stack>
-            </Stack>
-            <Stack gap="8px">
-                <Stack flexDirection={"row"} gap={"8px"}>
-                    <Box component={"img"} src={p1} />
-                    <Box component={"img"} src={p2} />
-                    <Box component={"img"} src={p3} />
-                    <Box component={"img"} src={p4} />
-                    <Box component={"img"} src={p5} />
-                </Stack>
-                <Stack flexDirection={"row"} gap={"8px"}>
-                    <Box component={"img"} src={p6} />
-                    <Box component={"img"} src={p7} />
-                    <Box component={"img"} src={p8} />
-                    <Box component={"img"} src={p9} />
-                    <Box component={"img"} src={p10} />
-                </Stack>
-            </Stack>
-        </Stack>
-    </Stack>                                                                                                                                      
+    </Box>                                                                                                                                      
   )
 }
 

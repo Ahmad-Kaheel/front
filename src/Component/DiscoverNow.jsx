@@ -43,7 +43,9 @@ const DiscoverNow = () => {
                             key={index} 
                             sx={{ 
                                 // width:"40%",
-                                height: {xs:"120px",sm:"180px",md:"240px",lg:"272px"},
+                                height: {xs:"120px",sm:"180px",md:"230px"},
+                                width: {xs:"120px",sm:"180px",md:"230px"},
+
                                 maxWidth:"272px",
                                 borderRadius: {xs:"14px",sm:"16px"}, 
                                 overflow: "hidden", 
