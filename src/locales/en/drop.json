@@ -1,0 +1,13 @@
+{
+    "profile":"show/edit profile",
+    "product":"products",
+
+    "order":"My order",
+    "subs":"My subscribe",
+    "addr":"My adresses",
+    "occ":"My occasions",
+    "favorite":"favorite",
+    "vip":"Golden Meat vip",
+    "bag":"Golden Meat Wallet",
+    "out":"Logout"
+}
