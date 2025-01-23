@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { setUser, logout } from '../state/slices/UserSlice'; 
-import store from '../state/store'; 
+import store from '../state/Store'; 
 import Cookies from 'js-cookie';
 
 const api = axios.create({
