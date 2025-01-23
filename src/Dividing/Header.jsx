@@ -9,7 +9,7 @@ const Header = () => {
     const isSmallScreen = useMediaQuery('(max-width:600px)');
 
     return (
-        <Box sx={{maxWidth:"1400px",margin:"auto"}}>
+        <Box sx={{maxWidth:"1700px",margin:"auto"}}>
             {isSmallScreen ? (
                 // عرض MobileNavigation فقط للشاشات الصغيرة
                 <MobileNavigation />

@@ -46,7 +46,7 @@ const Profile = () => {
 
     return (
         <Stack sx={{ paddingY:"32px",paddingX: { xs: "20px", sm: "32px", md: "64px", lg: "200px", width: { xs: "100%", md: "400px" } }, gap: "32px" }}>
-            <Typography>{t("account")}</Typography>
+            {/* <Typography>{t("account")}</Typography> */}
             <Stack direction={{ xs: "column", md: "row" }} gap={"32px"}>
                 <ToggleButtonGroup
                     orientation={isMobile ? "horizontal" : "vertical"}

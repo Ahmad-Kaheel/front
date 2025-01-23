@@ -62,7 +62,7 @@ import enWelcome from "./locales/en/welcome.json"
 import arCheckout from "./locales/ar/checkout.json"
 import enCheckout from "./locales/en/checkout.json"
 
-import store from './state/store';
+import Store from './state/Store';
 import { Provider } from 'react-redux';
 const savedLanguage = localStorage.getItem('language') || 'ar';
 
@@ -141,7 +141,7 @@ i18n
 
 export default i18n;
 createRoot(document.getElementById('root')).render(
-  <Provider store={store}>
+  <Provider store={Store}>
     <App />
     </Provider>
 )

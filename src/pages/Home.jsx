@@ -29,7 +29,7 @@ const Home = () => {
         <meta name="geo.region" content="SA" />
         <meta name="geo.placename" content="Saudi Arabia" />
       </Helmet>
-      <Box sx={{maxWidth:"1400px",margin:"auto"}}>
+      <Box sx={{maxWidth:"1700px",margin:"auto"}}>
         {isMobile ? <MobileHero /> : <Hero />} {/* عرض MobileHero إذا كانت الشاشة صغيرة */}
         <OurCategories/>
         <DiscountedProducts />

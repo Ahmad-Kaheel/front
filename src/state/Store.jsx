@@ -6,7 +6,7 @@ const loggerMiddleware = (store) => (next) => (action) => {
   console.log('Next state:', store.getState());
   return result;
 };
-const store = configureStore({
+const Store = configureStore({
   reducer: {
     user: userReducer,
   },
@@ -14,4 +14,4 @@ const store = configureStore({
   devTools: process.env.NODE_ENV !== 'production', // تفعيل DevTools فقط في بيئة التطوير
 });
 
-export default store;
+export default Store;

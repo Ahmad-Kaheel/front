@@ -11,7 +11,7 @@ const Welcome = () => {
     <Stack 
       sx={{
         minHeight: "100vh", 
-        maxWidth:"1400px",
+        maxWidth:"1700px",
         margin:"auto",
         width: "100%", 
         justifyContent: "center", 

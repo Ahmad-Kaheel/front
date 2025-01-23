@@ -9,6 +9,7 @@ const theme = createTheme({
     colors: {
       red0: "#E23636",
       black0: "#262626",
+      black1:"#595959",
       gray0: "#8C8C8C",
       white0: "#F2F2F2",
       white10:"#D9D9D9"

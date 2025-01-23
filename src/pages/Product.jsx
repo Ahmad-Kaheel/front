@@ -52,7 +52,7 @@ const Product = () => {
     setValue(newValue);
   };
   return (
-    <Stack gap="64px" sx={{ paddingY: "64px",paddingBottom:"128px", paddingX: { xs: "20px", sm: "32px", md: "128px", lg: "200px",xl:"20%" },position:"relative",maxWidth:"1400px",margin:"auto" }}>
+    <Stack gap="64px" sx={{ paddingY: "64px",paddingBottom:"128px", paddingX: { xs: "20px", sm: "32px", md: "128px", lg: "200px",xl:"20%" },position:"relative",maxWidth:"1700px",margin:"auto" }}>
        <Helmet>
         <title>لحم المى - متجر اللحوم الطازجة</title>
         <meta name="description" content="لحم المى - من أجود أنواع اللحوم الطازجة. اطلب الآن وتمتع بمذاق فريد من نوعه." />
